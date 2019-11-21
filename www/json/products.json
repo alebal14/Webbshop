@@ -22,5 +22,113 @@
     "price": 34,
     "image": "/images/tval.jpg",
     "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 4,
+    "slug": "produkter-sko",
+    "name": "Sko",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 5,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 6,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 7,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 8,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 9,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 10,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 11,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 12,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 13,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 14,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+  },
+
+  {
+    "id": 15,
+    "slug": "produkter-tval",
+    "name": "Tvål",
+    "price": 34,
+    "image": "/images/tval.jpg",
+    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
   }
 ]
