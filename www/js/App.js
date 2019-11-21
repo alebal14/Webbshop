@@ -20,6 +20,7 @@ class App {
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),
+      'varukorg': new Cart(),
       'page404': new Page404()
     };
     // A shop should always have a cart
@@ -69,4 +70,5 @@ class App {
     this.changeRoute();
   }
 
+  
 }

@@ -26,4 +26,14 @@ class Cart {
     `.replace(/\n\s*/g, '\n'))
   }
 
+  render() {
+    // This is how I render myself on a product-detail page
+    // there it only me
+    $('main').html(/*html*/`
+     <section class="row">
+        <h1> This is a Cart!!</h1>
+      </section>
+    `);
+  }
+
 }
