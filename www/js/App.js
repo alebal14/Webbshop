@@ -70,7 +70,9 @@ class App {
     this.changeRoute();
   }
 
-loadCart(){
+async loadCart(){
+  let cartsData = await $.getJSON('/json/cart.json');
+  
   this.routes.varukorg = new Cart();
   this.changeRoute();
 }
