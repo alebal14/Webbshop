@@ -9,16 +9,36 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
+ 
+ 
+ 
+add(product) {
+  let myCart = [];
+  let CartItem = product;
+  myCart.push(CartItem);
+  
+  console.log(CartItem);
 
+}
 
+saveCart(){
+  
+   
+  
+  console.log('Nånting');
+}
 
-  add(product) {    
+cartlist(){
 
-    
-    console.log(product);
-     
-       
-  }
+}
+
+loadCart(){
+
+}
+
+deleteCartItem(){
+
+}
   
   
 
