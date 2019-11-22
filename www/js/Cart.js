@@ -1,5 +1,7 @@
 class Cart {
 
+ 
+
   /*
 
     I am a Cart.
@@ -7,17 +9,38 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
+ 
+ 
+ 
+add(product) {
+  let myCart = [];
+  let CartItem = product;
+  myCart.push(CartItem);
+  
+  console.log(CartItem);
 
-  add(product) {
-    // We are doing a json stringify of the product
-    // minus the cart property of a product
-    // (which is just a reference to the cart)
-    //
-    // We don't need a JSON.stringify when we have
-    // intelligent methods... This i purely to
-    // show what product that is intended to be added...
-    cart.push(this);    
-  }
+}
+
+saveCart(){
+  
+   
+  
+  console.log('Nånting');
+}
+
+cartlist(){
+
+}
+
+loadCart(){
+
+}
+
+deleteCartItem(){
+
+}
+  
+  
 
   render() {
     // This is how I render myself on a product-detail page
