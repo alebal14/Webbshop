@@ -11,6 +11,8 @@ class App {
     in the main-tag :)
   */
 
+ 
+
   constructor() {
     // This are some routes:
     // * the keys are url hashes
@@ -71,9 +73,13 @@ class App {
   }
 
 async loadCart(){
+  let myCartItem = localStorage.getItem('Cart',JSON.stringify(myCart));
+ 
+
+
+  console.log('Hi, this is your localstorage: ', myCartItem);
   
-  
-  this.routes.varukorg = new Cart();
+  this.routes.varukorg = new Cart();  
   this.changeRoute();
 }
   

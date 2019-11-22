@@ -19,6 +19,7 @@ add(product) {
   let CartItem = product;
   myCart.push(product); 
   this.saveCart();
+  document.getElementById("cartValue").innerHTML = myCart.length;
   console.log(myCart);  
 }
 
@@ -30,9 +31,7 @@ cartlist(){
 
 }
 
-loadCart(){
 
-}
 
 deleteCartItem(){
 
@@ -41,6 +40,8 @@ deleteCartItem(){
   
 
   render() {
+    
+    return(
     // This is how I render myself on a product-detail page
     // there it only me
     $('main').html(/*html*/`
@@ -61,7 +62,7 @@ deleteCartItem(){
         <div class="col-12 col-lg-3">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
-      </section>   `);
+      </section>   `));
   }
 
 }
