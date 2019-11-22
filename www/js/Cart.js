@@ -9,24 +9,20 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
+
  
+
  
  
 add(product) {
   let myCart = [];
   let CartItem = product;
-  myCart.push(CartItem);
-  
-  console.log(CartItem);
+  myCart.push(CartItem); 
+  localStorage.setItem("Cart", JSON.stringify(myCart));
+  console.log(myCart);  
 
 }
 
-saveCart(){
-  
-   
-  
-  console.log('Nånting');
-}
 
 cartlist(){
 
