@@ -19,7 +19,7 @@ class App {
     //  the products from JSON)
     this.routes = {
       '': new StartPage(),
-      'omoss': new AboutUs(),
+      'omoss': new AboutUs(),      
       'page404': new Page404()
     };
     // A shop should always have a cart
@@ -28,6 +28,7 @@ class App {
     $(window).on('hashchange', () => this.changeRoute());
     // Load the products from JSON
     this.loadProducts();
+    this.loadCart();
   }
 
   changeRoute() {
@@ -69,4 +70,11 @@ class App {
     this.changeRoute();
   }
 
+async loadCart(){
+  let cartsData = await $.getJSON('/json/cart.json');
+  
+  this.routes.varukorg = new Cart();
+  this.changeRoute();
+}
+  
 }

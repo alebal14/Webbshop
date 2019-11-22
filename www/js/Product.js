@@ -36,6 +36,7 @@ class Product {
       // this.cart is an instance of Cart
       // add me to that cart
       this.cart.add(this);
+        
     });
   }
 
