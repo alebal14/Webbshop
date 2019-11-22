@@ -1,3 +1,4 @@
+let myCart = [];
 class Cart {
 
  
@@ -15,14 +16,15 @@ class Cart {
  
  
 add(product) {
-  let myCart = [];
   let CartItem = product;
-  myCart.push(CartItem); 
-  localStorage.setItem("Cart", JSON.stringify(myCart));
+  myCart.push(product); 
+  this.saveCart();
   console.log(myCart);  
-
 }
 
+saveCart(){
+  localStorage.setItem('Cart',JSON.stringify(myCart));
+}
 
 cartlist(){
 
