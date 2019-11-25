@@ -71,7 +71,7 @@ class App {
   }
 
 async loadCart(){
-  let cartsData = await $.getJSON('/json/cart.json');
+  
   
   this.routes.varukorg = new Cart();
   this.changeRoute();

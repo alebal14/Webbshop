@@ -1,4 +1,7 @@
+let myCart = [];
 class Cart {
+
+ 
 
   /*
 
@@ -7,17 +10,57 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
+convertAsString(myCart) {
+  return myCart.length.toString();
+}
+ 
+ 
+add(product) {
 
-  add(product) {
-    // We are doing a json stringify of the product
-    // minus the cart property of a product
-    // (which is just a reference to the cart)
-    //
-    // We don't need a JSON.stringify when we have
-    // intelligent methods... This i purely to
-    // show what product that is intended to be added...
-    cart.push(this);    
-  }
+  let CartItem = product;
+  myCart.push(product);
+  
+  console.log(CartItem);
+  console.log(myCart);
+  this.saveCart();
+  document.getElementById("cartValue").innerHTML = myCart.length;
+}
+
+saveCart(){
+  localStorage.setItem("items", JSON.stringify(myCart));
+  localStorage.setItem("quantity", JSON.stringify(myCart.length));
+  console.log('Nånting');
+// =======
+
+ 
+
+ 
+ 
+// add(product) {
+//   let CartItem = product;
+//   myCart.push(product); 
+//   this.saveCart();
+//   console.log(myCart);  
+// }
+
+// saveCart(){
+//   localStorage.setItem('Cart',JSON.stringify(myCart));
+// >>>>>>> f498e8a5844152de282f29a0564c1dc08c1d434c
+}
+
+cartlist(){
+
+}
+
+loadCart(){
+
+}
+
+deleteCartItem(){
+  localStorage.clear();
+}
+  
+  
 
   render() {
     // This is how I render myself on a product-detail page

@@ -10,6 +10,8 @@ class Product {
     clicks my buy-button.
   */
 
+ 
+
   constructor(data, cart) {
     // Object.assign is used to copy all properties from data to me
     Object.assign(this, data);
