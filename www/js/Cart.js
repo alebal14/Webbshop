@@ -30,6 +30,22 @@ saveCart(){
   localStorage.setItem("items", JSON.stringify(myCart));
   localStorage.setItem("quantity", JSON.stringify(myCart.length));
   console.log('Nånting');
+// =======
+
+ 
+
+ 
+ 
+// add(product) {
+//   let CartItem = product;
+//   myCart.push(product); 
+//   this.saveCart();
+//   console.log(myCart);  
+// }
+
+// saveCart(){
+//   localStorage.setItem('Cart',JSON.stringify(myCart));
+// >>>>>>> f498e8a5844152de282f29a0564c1dc08c1d434c
 }
 
 cartlist(){
