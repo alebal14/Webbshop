@@ -1,3 +1,4 @@
+let myCart = [];
 class Cart {
 
  
@@ -9,22 +10,25 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
- 
+convertAsString(myCart) {
+  return myCart.length.toString();
+}
  
  
 add(product) {
-  let myCart = [];
+
   let CartItem = product;
-  myCart.push(CartItem);
+  myCart.push(product);
   
   console.log(CartItem);
-
+  console.log(myCart);
+  this.saveCart();
+  document.getElementById("cartValue").innerHTML = myCart.length;
 }
 
 saveCart(){
-  
-   
-  
+  localStorage.setItem("items", JSON.stringify(myCart));
+  localStorage.setItem("quantity", JSON.stringify(myCart.length));
   console.log('Nånting');
 }
 
@@ -37,7 +41,7 @@ loadCart(){
 }
 
 deleteCartItem(){
-
+  localStorage.clear();
 }
   
   
