@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "slug": "produkter-badanka",
-    "name": "Badanka",
-    "price": 99,
-    "image": "/images/badanka.jpg",
-    "description": "En fin badanka som dubblar som superhjälte. Kläm på den och den kvackar!"
+    "slug": "produkter-kaffe",
+    "name": "Kaffe",
+    "price": 39,
+    "image": "/images/kaffe.jpg",
+    "description": "VIKTIGT!"
   },
   {
     "id": 2,
@@ -17,118 +17,118 @@
   },
   {
     "id": 3,
-    "slug": "produkter-tval",
+    "slug": "produkter-vattenpass",
     "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "price": 229,
+    "image": "/images/vattenpass.jpg",
+    "description": "Ett vattenpass"
   },
 
   {
     "id": 4,
-    "slug": "produkter-sko",
-    "name": "Sko",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-fluke",
+    "name": "Fluke",
+    "price": 499,
+    "image": "/images/fluke.jpg",
+    "description": "Vad är detta ens?!"
   },
 
   {
     "id": 5,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-hyvel",
+    "name": "Hyvel",
+    "price": 150,
+    "image": "/images/hyvel.jpg",
+    "description": "Obs, ej lämpad för ost."
   },
 
   {
     "id": 6,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-cirkelsag",
+    "name": "Cirkelsåg",
+    "price": 1299,
+    "image": "/images/cirkelsag.jpg",
+    "description": "När det ska sågas snabbt."
   },
 
   {
     "id": 7,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-skjutmatt",
+    "name": "Skjutmått",
+    "price": 99,
+    "image": "/images/skjutmatt.jpg",
+    "description": "Pang pang"
   },
 
   {
     "id": 8,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-skyddsglasogon",
+    "name": "Skyddsglasögon",
+    "price": 119,
+    "image": "/images/skyddsglasogon.jpg",
+    "description": "Skyddsbrillor plzzz"
   },
 
   {
     "id": 9,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-mutter",
+    "name": "Mutter",
+    "price": 8,
+    "image": "/images/mutter.jpg",
+    "description": "Mutter för dig som är butter"
   },
 
   {
     "id": 10,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-borrmaskin",
+    "name": "Borrmasking",
+    "price": 999,
+    "image": "/images/borrmaskin.jpg",
+    "description": "Borrrrrrr."
   },
 
   {
     "id": 11,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-plugg",
+    "name": "Plugg",
+    "price": 5,
+    "image": "/images/plugg.jpg",
+    "description": "Glöm inte plugga inför tentan!"
   },
 
   {
     "id": 12,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-skruvmejsel",
+    "name": "Skruvmejsel",
+    "price": 79,
+    "image": "/images/skruvmejsel.jpg",
+    "description": "En skruvmejsel av lägsta kvalité."
   },
 
   {
     "id": 13,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-skiftnyckel",
+    "name": "Skiftnyckel",
+    "price": 129,
+    "image": "/images/skiftnyckel.jpg",
+    "description": "En ph-neutral skiftnyckel, milt parfymerad med citrusdoft."
   },
 
   {
     "id": 14,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-hammare",
+    "name": "Hammare",
+    "price": 129,
+    "image": "/images/hammare.jpg",
+    "description": "En fin hammare att spika med"
   },
 
   {
     "id": 15,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "produkter-spik",
+    "name": "Spik",
+    "price": 3,
+    "image": "/images/spik.jpg",
+    "description": "En låda med en massa spik."
   }
 ]
