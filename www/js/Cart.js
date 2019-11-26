@@ -10,46 +10,35 @@ class Cart {
     I want to be a shopping-cart
     but so far I am really stupid... 😢
   */
+ constructor(){
+   this.myCart = [];
+ }
 
-
- constructor() {
-  // Object.assign is used to copy all properties from data to me
-  this.myCart = [];
-}
  
  
-add(product) {
-  let CartItem = product;
-  this.myCart.push(product); 
-  this.saveCart();
-  document.getElementById("cartValue").innerHTML = this.myCart.length;
-  console.log(this.myCart);  
+ 
+add(cartItem) {
+   this.myCart.push(cartItem);  
+   this.saveCart();
 }
+
 
 saveCart(){
-  localStorage.setItem('Cart',JSON.stringify(this.myCart));
+localStorage.setItem('Cart',JSON.stringify(this.myCart));
 }
-
-cartlist(){
-
-}
-
-
-
-deleteCartItem(){
-
-}
-  
-  
 
 render() {
-  // This is how I render myself on a product-detail page
-  // there it only me
-  $('main').html/*html*/
-    for (var i = 0; i < localStorage.length; i++){
-    $('body').append(localStorage.getItem(localStorage.key(i)));
-}
-  ;
+  $('main').html(`
+    <section class="row">
+      <div class="col">
+        <h1>Varukorgen</h1>
+      </div>
+    </section>
+    <section class="row">
+      <!-- Notice the "loop" using the array map method -->
+      ${this.myCart.map(item => item.render()).join('')}
+    </section>
+  `);
 }
 
   

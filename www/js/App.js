@@ -78,7 +78,7 @@ async loadCart(){
   
   console.log('Din varukorg:' + myCartItems);
     
-  this.routes.varukorg = new Cart; 
+  this.routes.varukorg = this.cart; 
    
   this.changeRoute();
 }

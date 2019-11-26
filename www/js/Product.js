@@ -37,7 +37,7 @@ class Product {
       e.preventDefault();
       // this.cart is an instance of Cart
       // add me to that cart
-      this.cart.add(this);
+      this.cart.add(new CartItem(this.id, this.name, this.img, this.price, 1));
         
     });
   }
