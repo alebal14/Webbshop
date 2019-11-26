@@ -37,7 +37,9 @@ class Product {
       e.preventDefault();
       // this.cart is an instance of Cart
       // add me to that cart
-      this.cart.add(new CartItem(this.id, this.name, this.img, this.price, 1));
+      
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price, 1));
+
         
     });
   }
@@ -45,8 +47,7 @@ class Product {
   render() {
     // This is how I render myself on a product-detail page
     // there it only me
-    $('main').html(/*html*/`
-     <section class="row">
+    $('main').html(/*html*/ `<section class="row">
         <div class="col">
           <h1>${this.name}</h1>
         </div>
@@ -58,7 +59,7 @@ class Product {
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
         <div class="col-12 col-lg-3">
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
+        <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
     `);

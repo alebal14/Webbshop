@@ -13,7 +13,7 @@ class Cart {
 
   
 add(cartItem) {
-   this.myCart.push(cartItem);  
+   this.myCart.push(cartItem);     
    this.saveCart();
    
 }
