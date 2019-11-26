@@ -11,6 +11,7 @@ class Cart {
     but so far I am really stupid... 😢
   */
 
+
  
 
  
@@ -39,8 +40,7 @@ deleteCartItem(){
   
   
 
-  render() {
-    
+  render() {    
     return(
     // This is how I render myself on a product-detail page
     // there it only me
@@ -63,6 +63,20 @@ deleteCartItem(){
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>   `));
+  }
+
+  renderInList() {
+    // This is how I render myself in a list of products
+    // (this method is called from a ProductList)
+    return `
+      <div class="col-12 col-md-6 col-lg-4 mt-5">
+        <a href="#${this.slug}">
+          <h4>${this.name} ${this.price} kr</h4>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          <img class="img-fluid border border-primary rounded" src="${this.image}">
+        </a>
+      </div>
+    `
   }
 
 }
