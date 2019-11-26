@@ -7,11 +7,12 @@ class StartPage {
 
   render() {
     $('main').html(/*html*/`
-      <section class="row">
-        <div class="col">
-          <h1>Välkommen!</h1>
-          <p>Välkommen till vår fina webbsida!</p>
+    <section class="startsida">
+      <section class="row startrow align-items-center">
+        <div class="col text-center">
+          <h1 class="logo">Välkommen!</h1>
         </div>
+      </section>
       </section>
     `);
   }
