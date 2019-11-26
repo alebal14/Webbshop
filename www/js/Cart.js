@@ -1,8 +1,5 @@
 
 class Cart {
-
- 
-
   /*
 
     I am a Cart.
@@ -14,13 +11,13 @@ class Cart {
    this.myCart = [];
  }
 
- 
- 
- 
+  
 add(cartItem) {
    this.myCart.push(cartItem);  
    this.saveCart();
+   
 }
+
 
 
 saveCart(){
@@ -28,7 +25,7 @@ localStorage.setItem('Cart',JSON.stringify(this.myCart));
 }
 
 render() {
-  $('main').html(`
+    $('main').html(`
     <section class="row">
       <div class="col">
         <h1>Varukorgen</h1>
