@@ -72,21 +72,13 @@ class App {
     this.changeRoute();
   }
 
-async loadCart(){
-  let myCartItems = localStorage.getItem('Cart');
+async loadCart(){  
 
-  this.cartlist = [];
-    // Loop through the JSON data and create Products
-    for (let myCartItem of myCartItems) {
-      let cartlists = new Cart(myCartItem);
-      this.cartlist.push(cartlists);       
-    }
-    // Make a new product list with all of our products
-    // and add it to our routes
+  var myCartItems = localStorage.getItem(this.myCart);
+  
+  console.log('Din varukorg:' + myCartItems);
     
-    this.routes.varukorg = new CartList(this.cartlist);
-
- 
+  this.routes.varukorg = new Cart; 
    
   this.changeRoute();
 }
