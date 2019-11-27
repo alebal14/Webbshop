@@ -12,7 +12,7 @@ class ProductList {
   }
 
   render() {
-    $('#link3').addClass('active')
+  	$('#link3').addClass('active')
     $('main').removeClass('startsida');
     $('main').html(`
       <section class="row">
