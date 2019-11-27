@@ -6,15 +6,16 @@ class StartPage {
   */
 
   render() {
+    $('#link1').addClass('active')
+    $('main').addClass('startsida')
     $('main').html(/*html*/`
-    <section class="startsida">
       <section class="row startrow align-items-center">
         <div class="col text-center">
           <h1 class="logo">Välkommen!</h1>
         </div>
       </section>
-      </section>
     `);
+
   }
 
 }
