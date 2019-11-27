@@ -15,6 +15,7 @@ class Cart {
 add(cartItem) {
    this.myCart.push(cartItem);     
    this.saveCart();
+   this.allSum();
    
 }
 
@@ -29,6 +30,17 @@ localStorage.setItem('Cart',JSON.stringify(this.myCart));
 
 allSum(){
   //summering av alla priser
+  let total = 0;
+  let totalmoms;
+  for(var i=0; i<this.myCart.length; i++){
+      total += this.myCart[i].price;
+      console.log(total);
+
+      totalmoms = total * 0.25; 
+      console.log(totalmoms);
+  }
+  
+
 }
 
 showOnDropDown(){
@@ -45,8 +57,9 @@ render() {
     </section>
     <section class="row">
       <!-- Notice the "loop" using the array map method -->
-      ${this.myCart.map(item => item.render()).join('')}
+      ${this.myCart.map(item => item.render()).join('')}      
     </section>
+    
   `);
     $('main').removeClass('startsida')
 }
