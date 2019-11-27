@@ -13,11 +13,30 @@ class Cart {
  }
 
   
-add(cartItem) {
-  
-    this.myCart.push(cartItem);      
-   this.saveCart();     
-   //this.allSum();    
+ add(cartItem) {
+
+  const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
+
+    if(existingProduct) {
+      this.increaseUnit(existingProduct);
+    }
+    else {
+      cartItem.unit = 1;
+      this.myCart.push(cartItem); 
+    }
+
+   this.saveCart();
+ 
+   this.allSum();
+}
+
+increaseUnit(existingProduct)
+{
+  existingProduct.unit++;
+  this.myCart.splice(
+    this.myCart.findIndex(product => product.id === existingProduct.id),
+    existingProduct
+  );
 }
 
 
@@ -32,7 +51,7 @@ allSum(){
   let total = 0;
   let totalmoms;
   for(var i=0; i<this.myCart.length; i++){
-      total += this.myCart[i].price;
+      total += this.myCart[i].price * this.myCart[i].unit;
       console.log(total);      
   }
   totalmoms = total * 0.25; 

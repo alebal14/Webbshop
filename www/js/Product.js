@@ -39,14 +39,9 @@ class Product {
       // this.cart is an instance of Cart
       // add me to that cart
       
-      this.cart.add(new CartItem(this.id, this.name, this.image, this.price, this.unit));
-
-        
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price));        
     });
-  }
-
-    
-  
+  }  
 
   render() {
     // This is how I render myself on a product-detail page
