@@ -6,8 +6,6 @@ class AboutUs {
   */
 
   render() {
-    $('#link2').addClass('active')
-    $('main').removeClass('startsida');
     $('main').html(/*html*/`
     <section class="container omossbg">
     <section class="row">
@@ -35,7 +33,6 @@ class AboutUs {
     </section>
   </section>
     `);
-
   }
 
 }

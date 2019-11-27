@@ -83,10 +83,4 @@ async loadCart(){
   this.changeRoute();
 }
   
-
-
 }
-$('li').on('click', function hejhopp(){
-  $(this).siblings().removeClass('active');
-  $(this).addClass('active');
-})
