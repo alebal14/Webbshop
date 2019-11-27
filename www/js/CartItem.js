@@ -5,18 +5,20 @@ class CartItem{
         this.name = name;        
         this.price = price;
         this.unit = unit;  
-        this.image = image;
-         
+        this.image = image;  
+        this.loadCart();
+                  
     }
     
-    loadCart(){
+      loadCart(){
         let mydata= JSON.parse(localStorage.getItem(this.myCart));
       }
 
       clearCartitem(){
         //lägg till knapp+knyta till localstorages 
-        localStorage.removeItem('myItem');
+        localStorage.removeItem('cartItem');
       }
+     
 
    render(){
     return `

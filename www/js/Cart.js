@@ -8,25 +8,24 @@ class Cart {
     but so far I am really stupid... 😢
   */
  constructor(){
-   this.myCart = [];
+   this.myCart = [];   
+   
  }
 
   
 add(cartItem) {
-   this.myCart.push(cartItem);     
-   this.saveCart();
-   this.allSum();
-   
+  
+    this.myCart.push(cartItem);      
+   this.saveCart();     
+   //this.allSum();    
 }
 
-clearCart(){
-  //lägg till en knapp
-  localStorage.clear()
-}
 
 saveCart(){
+
 localStorage.setItem('Cart',JSON.stringify(this.myCart));
 }
+
 
 allSum(){
   //summering av alla priser
@@ -34,11 +33,10 @@ allSum(){
   let totalmoms;
   for(var i=0; i<this.myCart.length; i++){
       total += this.myCart[i].price;
-      console.log(total);
-
-      totalmoms = total * 0.25; 
-      console.log(totalmoms);
+      console.log(total);      
   }
+  totalmoms = total * 0.25; 
+      console.log(totalmoms);
 }
 
 showOnDropDown(){
@@ -54,13 +52,11 @@ render() {
       </div>
     </section>
     <section class="row">
-      <!-- Notice the "loop" using the array map method -->
+      <!-- Notice the "loop" using the array map method -->      
       ${this.myCart.map(item => item.render()).join('')}
     </section>
+    <button id="removeBtn" class="btn btn-primary my-2">Remove</button>
   `);
     $('main').removeClass('startsida')
 }
-
-  
-
 }
