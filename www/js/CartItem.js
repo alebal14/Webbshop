@@ -13,6 +13,11 @@ class CartItem{
         let mydata= JSON.parse(localStorage.getItem(this.myCart));
       }
 
+      clearCartitem(){
+        //lägg till knapp+knyta till localstorages 
+        localStorage.removeItem('myItem');
+      }
+
    render(){
     return `
     <div class="col-12">

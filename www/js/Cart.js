@@ -18,10 +18,21 @@ add(cartItem) {
    
 }
 
-
+clearCart(){
+  //lägg till en knapp
+  localStorage.clear()
+}
 
 saveCart(){
 localStorage.setItem('Cart',JSON.stringify(this.myCart));
+}
+
+allSum(){
+  //summering av alla priser
+}
+
+showOnDropDown(){
+  //render varukorg på dropdown i nav
 }
 
 render() {
