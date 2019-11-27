@@ -1,11 +1,10 @@
 .startsida {
   background-image: url("https://www.erskine-murray.co.uk/images/dev-images/Business-Insurance/SME-Insurance/erskine_murray_warehouse.jpg");
   background-size: cover;
-  min-height: 85vh;
 }
 
 .startrow {
-  min-height: 85vh;
+  min-height: 50vh;
 }
 
 .logo {
@@ -34,10 +33,36 @@
   margin-top: 5%;
 }
 
-.activeLink {
-  color: #c00202 !important;
+ul li {
+  width: 100px;
+  text-align: center;
+}
+
+.slide {
+  position: absolute;
   background-color: #fff;
-  font-weight: bold;
+  height: 15%;
+  width: 100px;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+ul li:nth-child(1).active ~ .slide {
+  left: 110px;
+}
+
+ul li:nth-child(2).active ~ .slide {
+  left: 210px;
+}
+
+ul li:nth-child(3).active ~ .slide {
+  left: 310px;
+}
+
+ul li:nth-child(4).active ~ .slide {
+  left: 410px;
 }
 
 /*!

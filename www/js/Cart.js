@@ -65,6 +65,7 @@ deleteCartItem(){
   render() {
     // This is how I render myself on a product-detail page
     // there it only me
+    $('#link4').addClass('active')
     $('main').html(/*html*/`
      <section class="row">
         <h1> This is a Cart!!</h1>
@@ -84,6 +85,7 @@ deleteCartItem(){
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>   `);
+      $('main').removeClass('startsida')
   }
 
 }

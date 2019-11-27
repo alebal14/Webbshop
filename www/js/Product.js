@@ -45,6 +45,7 @@ class Product {
   render() {
     // This is how I render myself on a product-detail page
     // there it only me
+    $('main').removeClass('startsida');
     $('main').html(/*html*/`
      <section class="row">
         <div class="col">
@@ -62,6 +63,7 @@ class Product {
         </div>
       </section>
     `);
+   
   }
 
   renderInList() {
