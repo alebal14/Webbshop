@@ -9,7 +9,7 @@ class Cart {
   */
  constructor(){
    this.myCart = [];   
-   
+      
  }
 
   
@@ -29,6 +29,7 @@ class Cart {
  
    this.allSum();  
    this.allMoms();
+   this.renderOnDropdown();
 }
 
 increaseUnit(existingProduct)
@@ -67,9 +68,19 @@ allMoms(){
     return totalmoms
 }
 
-showOnDropDown(){
+renderOnDropdown(){
   //render varukorg på dropdown i nav
+  $('#cartdropdown').html(`    
+    <section class="row">           
+      ${this.myCart.map(item => item.render()).join('')}
+    </section>
+    <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
+    <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>    
+  `);
+  
 }
+
+
 
 render() {
   $('#link4').addClass('active')
