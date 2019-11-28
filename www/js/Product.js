@@ -17,7 +17,7 @@ class Product {
     Object.assign(this, data);
     // I also know who is my cart (the App sent me this info)
     this.cart = cart;
-    // I add listeners to my buy-button(s)
+        // I add listeners to my buy-button(s)
     this.addBuyButtonListener();
   }
 
@@ -26,10 +26,11 @@ class Product {
     // * when you click on the body
     // * if you clicked inside something matching the css-selector
     //   #buy-button-myId 
-    // * then run the anonymous arrow function...
+    // * then run the anonymous arrow function... 
+   
     $('body').on('click', `#buy-button-${this.id}`, e => {
       // e is the event object
-      // it has a preventDefault method
+      // it has a preventDefault method      
       // when you call that method it prevents the browser
       // from doing what it normally does on a certain element
       // since the buy button is sometimes inside a a-tag
@@ -38,11 +39,9 @@ class Product {
       // this.cart is an instance of Cart
       // add me to that cart
       
-      this.cart.add(new CartItem(this.id, this.name, this.image, this.price, 1));
-
-        
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price));        
     });
-  }
+  }  
 
   render() {
     // This is how I render myself on a product-detail page
