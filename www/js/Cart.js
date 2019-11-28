@@ -73,12 +73,25 @@ showOnDropDown(){
 
 render() {
   $('#link4').addClass('active')
-    $('main').html(`
+    if(this.myCart.length === 0){
+      $('main').html(`
     <section class="row">
       <div class="col">
         <h1>Varukorgen</h1>
       </div>
+    </section>    
+    <section class="row">
+      <h1> Tomt</h1>
     </section>
+    
+  `);
+    } else {
+      $('main').html(`
+    <section class="row">
+      <div class="col">
+        <h1>Varukorgen</h1>
+      </div>
+    </section>    
     <section class="row">
       <!-- Notice the "loop" using the array map method -->      
       ${this.myCart.map(item => item.render()).join('')}
@@ -87,6 +100,8 @@ render() {
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>
     <button id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
   `);
+    } 
+    
     $('main').removeClass('startsida')
 }
 }
