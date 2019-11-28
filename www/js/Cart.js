@@ -75,7 +75,8 @@ renderOnDropdown(){
       ${this.myCart.map(item => item.render()).join('')}
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
-    <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>    
+    <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>  
+    <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></section>   
   `);
   
 }
