@@ -75,11 +75,11 @@ renderOnDropdown(){
   //render varukorg på dropdown i nav
   $('#cartdropdown').html(`    
     <section class="row">           
-      ${this.myCart.map(item => item.render()).join('')}
+      ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
+    <div class="col-3"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
+    <p class="totalsumma">Moms: ${this.allMoms()}:-</p>
+    <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
     </section>
-    <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
-    <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>  
-    <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></section>   
   `);
   
 }

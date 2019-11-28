@@ -18,7 +18,7 @@
   {
     "id": 3,
     "slug": "produkter-vattenpass",
-    "name": "Tvål",
+    "name": "Vattenpass",
     "price": 229,
     "image": "/images/vattenpass.jpg",
     "description": "Ett vattenpass"
@@ -30,7 +30,7 @@
     "name": "Fluke",
     "price": 499,
     "image": "/images/fluke.jpg",
-    "description": "Vad är detta ens?!"
+    "description": "En bra multimeter!"
   },
 
   {
