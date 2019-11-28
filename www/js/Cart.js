@@ -27,7 +27,8 @@ class Cart {
 
    this.saveCart();
  
-   this.allSum();
+   this.allSum();  
+   this.allMoms();
 }
 
 increaseUnit(existingProduct)
@@ -48,14 +49,22 @@ localStorage.setItem('Cart',JSON.stringify(this.myCart));
 
 allSum(){
   //summering av alla priser
-  let total = 0;
-  let totalmoms;
+  let total = 0;  
   for(var i=0; i<this.myCart.length; i++){
       total += this.myCart[i].price * this.myCart[i].unit;
-      console.log(total);      
-  }
-  totalmoms = total * 0.25; 
-      console.log(totalmoms);
+     
+  }  
+  return total  
+}
+
+allMoms(){
+  let totalmoms = 0;
+  let total = 0;
+  for(var i=0; i<this.myCart.length; i++){
+    total += this.myCart[i].price * this.myCart[i].unit;   
+    }  
+    totalmoms = total * 0.25; 
+    return totalmoms
 }
 
 showOnDropDown(){
@@ -74,6 +83,8 @@ render() {
       <!-- Notice the "loop" using the array map method -->      
       ${this.myCart.map(item => item.render()).join('')}
     </section>
+    <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
+    <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>
     <button id="removeBtn" class="btn btn-primary my-2">Remove</button>
   `);
     $('main').removeClass('startsida')
