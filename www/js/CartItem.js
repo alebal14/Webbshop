@@ -5,8 +5,8 @@ class CartItem{
         this.name = name;        
         this.price = price;
         this.unit = unit;  
-        this.image = image;  
-        this.loadCart();
+        this.image = image;
+        this.loadCart();         
                   
     }
     
@@ -18,7 +18,7 @@ class CartItem{
         //lägg till knapp+knyta till localstorages 
         localStorage.removeItem('cartItem');
       }
-     
+
       prodTotal(){
         //summering av alla priser
         let totalprice = 0;  
@@ -26,6 +26,7 @@ class CartItem{
          
         return totalprice  
       }
+     
 
    render(){
     return `

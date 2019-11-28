@@ -37,11 +37,10 @@ class Product {
       // in this case it prevents us from following the a-tag
       e.preventDefault();
       // this.cart is an instance of Cart
-      // add me to that cart
-     
+      // add me to that cart    
       
       this.cart.add(new CartItem(this.id, this.name, this.image, this.price));  
-      $('.dropdown').addClass('open');   
+        
     });
   }  
 
