@@ -38,8 +38,10 @@ class Product {
       e.preventDefault();
       // this.cart is an instance of Cart
       // add me to that cart
+     
       
-      this.cart.add(new CartItem(this.id, this.name, this.image, this.price));        
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price));  
+      $('.dropdown').addClass('open');   
     });
   }  
 
