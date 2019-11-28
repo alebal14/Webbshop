@@ -33,7 +33,9 @@ class CartItem{
     <ul class="cartlist list-inline">
         <li class="list-inline-item"><img class="img-fluid border border-primary rounded" src="${this.image}"></li>  
         <li class="list-inline-item"><p>${this.name}</p></li>
-        <li class="list-inline-item"><p>${this.unit}</p></li> 
+        <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
+        <li class="list-inline-item"><p>${this.unit}</p></li>
+        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button> 
         <li class="list-inline-item"><p>${this.price}<span> Kr</span></p></li>
         <li class="list-inline-item"><p>${this.prodTotal()}<span> Kr</span></li>
                      

@@ -9,7 +9,7 @@ class Cart {
   */
  constructor(){
    this.myCart = [];   
-   
+   store.currentCartValue = 0;
  }
 
   
@@ -26,9 +26,10 @@ class Cart {
     }
 
    this.saveCart();
- 
+    
    this.allSum();  
    this.allMoms();
+   cartCounter();
 }
 
 increaseUnit(existingProduct)
@@ -44,6 +45,7 @@ increaseUnit(existingProduct)
 saveCart(){
 
 localStorage.setItem('Cart',JSON.stringify(this.myCart));
+localStorage.setItem('currentCartValue', store.currentCartValue);
 }
 
 
@@ -98,10 +100,30 @@ render() {
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>
-    <button id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
+    <button onclick="clearCart()" id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
   `);
     } 
     
     $('main').removeClass('startsida')
+}
+}
+
+function clearCart(){
+  localStorage.clear();
+  alert('Local storage rensat lol');
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue = 0);
+}
+function cartCounter(){
+  store.currentCartValue++
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
+}
+function negCartCounter(){
+  if (store.currentCartValue > 0){
+  store.currentCartValue--
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
+}
+else{
+  store.currentCartValue = 0;
+  alert('Inga varor i varukorgen!');
 }
 }
