@@ -10,12 +10,22 @@ class Cart {
  constructor(){
    this.myCart = [];   
    store.currentCartValue = 0;
+   this.clearCart();
  }
+
+
+ clearCart(){
+  $('body').on('click', `#removeBtn`, e => {    
+    e.preventDefault();
+    localStorage.clear();    
+    new App();
+  });  
+}
+
 
 
   
  add(cartItem) {
-
   const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
 
     if(existingProduct) {
@@ -25,13 +35,11 @@ class Cart {
       cartItem.unit = 1;
       this.myCart.push(cartItem); 
     }
-
    this.saveCart();    
    this.allSum();  
    this.allMoms();
-   cartCounter();
+   //this.cartCounter();
    this.renderOnDropdown();
-
 }
 
 increaseUnit(existingProduct)
@@ -45,7 +53,6 @@ increaseUnit(existingProduct)
 
 
 saveCart(){
-
 localStorage.setItem('Cart',JSON.stringify(this.myCart));
 localStorage.setItem('currentCartValue', store.currentCartValue);
 }
@@ -55,8 +62,7 @@ allSum(){
   //summering av alla priser
   let total = 0;  
   for(var i=0; i<this.myCart.length; i++){
-      total += this.myCart[i].price * this.myCart[i].unit;
-     
+      total += this.myCart[i].price * this.myCart[i].unit;     
   }  
   return total  
 }
@@ -79,12 +85,10 @@ renderOnDropdown(){
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>  
-    <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></section>   
+    <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></section>  
   `);
   
 }
-
-
 
 render() {
   $('#link4').addClass('active')
@@ -113,7 +117,7 @@ render() {
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>
-    <button onclick="clearCart()" id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
+    <button id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
   `);
     } 
     
@@ -121,15 +125,8 @@ render() {
 }
 }
 
-function clearCart(){
-  localStorage.clear();
-  alert('Local storage rensat lol');
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue = 0);
-}
-function cartCounter(){
-  store.currentCartValue++
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
-}
+
+
 function negCartCounter(){
   if (store.currentCartValue > 0){
   store.currentCartValue--
