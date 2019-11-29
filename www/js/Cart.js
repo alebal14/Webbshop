@@ -10,7 +10,7 @@ class Cart {
  constructor(){
    this.myCart = [];   
    store.currentCartValue = 0;
-   this.clearCart();  
+   this.clearCart();     
  }
 
 
@@ -117,6 +117,26 @@ render() {
     } 
     
     $('main').removeClass('startsida')
+}
+}
+
+function clearCart(){
+  localStorage.clear();
+  alert('Local storage rensat lol');
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue = 0);
+}
+function cartCounter(){
+  store.currentCartValue++
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
+}
+function negCartCounter(){
+  if (store.currentCartValue > 0){
+  store.currentCartValue--
+  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
+}
+else{
+  store.currentCartValue = 0;
+  alert('Inga varor i varukorgen!');
 }
 }
 
