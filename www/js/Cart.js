@@ -36,7 +36,8 @@ class Cart {
    this.allSum();  
    this.allMoms();   
    this.renderOnDropdown();
-   this.pass();
+   this.TotalUnit();
+   this.renderTotalUnit();
 }
 
 increaseUnit(existingProduct)
@@ -71,6 +72,18 @@ allMoms(){
     }  
     totalmoms = total * 0.25; 
     return totalmoms
+}
+
+TotalUnit(){
+    let totalunit = 0;
+    for(var i=0; i<this.myCart.length; i++){
+      totalunit += this.myCart[i].unit;   
+      }  
+     return totalunit;
+}
+
+renderTotalUnit(){
+  document.getElementById('cartValue').innerHTML = this.TotalUnit();
 }
 
 renderOnDropdown(){
