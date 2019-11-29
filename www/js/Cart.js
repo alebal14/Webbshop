@@ -10,7 +10,7 @@ class Cart {
  constructor(){
    this.myCart = [];   
    store.currentCartValue = 0;
-   this.clearCart();
+   this.clearCart();  
  }
 
 
@@ -22,9 +22,6 @@ class Cart {
   });  
 }
 
-
-
-  
  add(cartItem) {
   const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
 
@@ -37,9 +34,9 @@ class Cart {
     }
    this.saveCart();    
    this.allSum();  
-   this.allMoms();
-   //this.cartCounter();
+   this.allMoms();   
    this.renderOnDropdown();
+   this.pass();
 }
 
 increaseUnit(existingProduct)
