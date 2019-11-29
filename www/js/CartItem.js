@@ -6,7 +6,8 @@ class CartItem{
         this.price = price;
         this.unit = unit;  
         this.image = image;
-        this.loadCart();         
+        this.loadCart();  
+        this.negCartCounter();       
                   
     }
     
@@ -22,9 +23,16 @@ class CartItem{
       prodTotal(){
         //summering av alla priser
         let totalprice = 0;  
-        totalprice = this.unit * this.price;
-         
+        totalprice = this.unit * this.price;         
         return totalprice  
+      }
+
+      negCartCounter(){
+      $('body').on('click', `#negCartCounter-${this.id}`, e => { 
+          e.preventDefault();   
+                 
+         
+        });  
       }
      
 
@@ -34,15 +42,13 @@ class CartItem{
     <ul class="cartlist list-inline">
         <li class="list-inline-item"><img class="img-fluid border border-primary rounded" src="${this.image}"></li>  
         <li class="list-inline-item"><p>${this.name}</p></li>
-        <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
+        <button id="negCartCounter-${this.id}"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
-        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button> 
+        <button id="cartCounter"><i class="fas fa-plus"></i></button> 
         <li class="list-inline-item"><p>${this.price}<span> Kr</span></p></li>
-        <li class="list-inline-item"><p>${this.prodTotal()}<span> Kr</span></li>
-                     
+        <li class="list-inline-item"><p>${this.prodTotal()}<span> Kr</span></li>                     
     </ul>      
-    </div>
-  `
+    </div>  `
 }
 }
  

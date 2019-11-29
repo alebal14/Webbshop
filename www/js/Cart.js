@@ -57,7 +57,6 @@ localStorage.setItem('Cart',JSON.stringify(this.myCart));
 localStorage.setItem('currentCartValue', store.currentCartValue);
 }
 
-
 allSum(){
   //summering av alla priser
   let total = 0;  
@@ -86,8 +85,7 @@ renderOnDropdown(){
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>KR</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>KR</span></div><br>  
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></section>  
-  `);
-  
+  `); 
 }
 
 render() {
@@ -127,13 +125,3 @@ render() {
 
 
 
-function negCartCounter(){
-  if (store.currentCartValue > 0){
-  store.currentCartValue--
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
-}
-else{
-  store.currentCartValue = 0;
-  alert('Inga varor i varukorgen!');
-}
-}
