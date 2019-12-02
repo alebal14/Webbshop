@@ -95,7 +95,7 @@ render() {
       </div>
     </section>    
     <section class="row">
-      <h1> Tomt</h1>
+      <h1>Tomt</h1>
     </section>
     
   `);
@@ -112,7 +112,8 @@ render() {
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>:-</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>:-</span></div><br>
-    <button id="removeBtn" class="btn btn-primary my-2 float-right">Remove</button>
+    <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right">Töm varukorg</button>
+    <button id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right">Gå till kassan</button>
   `);
     } 
     
