@@ -43,28 +43,28 @@ class CartItem {
     return `
     <div class="col-12">
     <ul class="cartlist list-inline">
-        <li class="list-inline-item"><img class="img-fluid border border-primary rounded" src="${this.image}"></li>  
+        <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
         <li class="list-inline-item"><p>${this.name}</p></li>
         <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
         <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>  
-        <li class="list-inline-item"><p>${this.price}<span> Kr</span></p></li>
-        <li class="list-inline-item"><p>${this.prodTotal()}<span> Kr</span></li>                     
+        <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
+        <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>                     
     </ul>
     </div>`  
 }
 
 renderCartItemonDropdown(){
   return `
-  <div class="col-9">
+  <div class="col-9 mb-1">
   <ul class="cartDrop list-inline">
-      <li class="list-inline-item"><img class="img-fluid border border-primary rounded" src="${this.image}"></li>  
+      <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
       <li class="list-inline-item"><p class="cartp">${this.name}</p></li>
       <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
       <li class="list-inline-item"><p class="cartp">${this.unit}</p></li>
       <button onclick="cartCounter()"><i class="fas fa-plus"></i></button> 
-      <li class="list-inline-item"><p class="cartp">${this.price}<span> Kr</span></p></li>
-      <li class="list-inline-item"><p class="cartp">${this.prodTotal()}<span> Kr</span></p></li>             
+      <li class="list-inline-item"><p class="cartp">${this.price}<span>:-/st</span></p></li>
+      <li class="list-inline-item"><p class="cartp">Totalt: ${this.prodTotal()}<span>:-</span></p></li>             
   </ul>      
   </div>`
 }

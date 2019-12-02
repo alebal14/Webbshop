@@ -9496,7 +9496,20 @@ main {
   min-height: 50vh;
 }
 
-.logo {
+.logotype {
+  max-width: 100px;
+}
+
+.logotypestart {
+  animation: fade 1s ease-in;
+}
+
+.navbar {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 130%;
+}
+
+.logotext {
   color: white;
   font-size: 350%;
   text-shadow: 2px 2px black;
@@ -9522,6 +9535,15 @@ main {
   margin-top: 5%;
 }
 
+h4 {
+  display: inline;
+}
+
+.btn-warning:hover {
+  background-color: green;
+  transition: 0.5s;
+}
+
 ul li {
   width: 100px;
   text-align: center;
@@ -9539,19 +9561,19 @@ ul li {
 }
 
 ul li:nth-child(1).active ~ .slide {
-  left: 110px;
+  left: 120px;
 }
 
 ul li:nth-child(2).active ~ .slide {
-  left: 210px;
+  left: 220px;
 }
 
 ul li:nth-child(3).active ~ .slide {
-  left: 310px;
+  left: 320px;
 }
 
 ul li:nth-child(4).active ~ .slide {
-  left: 410px;
+  left: 420px;
 }
 
 .cartIcon {
@@ -9560,11 +9582,6 @@ ul li:nth-child(4).active ~ .slide {
 
 .cartDrop {
   width: 800px;
-}
-
-.cartp {
-  font-size: small;
-  font-weight: bold;
 }
 
 .dropdown-menu {
