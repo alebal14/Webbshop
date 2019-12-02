@@ -48,8 +48,8 @@ class CartItem {
         <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
         <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>  
-        <li class="list-inline-item"><p>${this.price}<span> Kr</span></p></li>
-        <li class="list-inline-item"><p>${this.prodTotal()}<span> Kr</span></li>                     
+        <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
+        <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>                     
     </ul>
     </div>`  
 }

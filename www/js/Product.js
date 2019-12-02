@@ -56,10 +56,10 @@ class Product {
       <section class="row">
         <div class="col-12 col-lg-9">
           <p>${this.description}</p>
-          <h4>${this.price} kr</p>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          <h4>${this.price}:-</p>
+          <button id="buy-button-${this.id}" class="btn rounded-0 btn-warning my-2">Köp</button>
         </div>
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-lg-3 view overlay">
         <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
@@ -72,9 +72,9 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5">
         <a href="#${this.slug}">
-          <h4>${this.name} ${this.price} kr</h4>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
+          <h4>${this.name} ${this.price}:-</h4>
+          <button id="buy-button-${this.id}" class="btn rounded-0 float-right btn-warning my-2">Köp</button>
+          <img class="img-fluid border border-primary" src="${this.image}">
         </a>
       </div>
     `
