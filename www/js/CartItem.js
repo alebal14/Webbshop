@@ -63,8 +63,8 @@ renderCartItemonDropdown(){
       <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
       <li class="list-inline-item"><p class="cartp">${this.unit}</p></li>
       <button onclick="cartCounter()"><i class="fas fa-plus"></i></button> 
-      <li class="list-inline-item"><p class="cartp">${this.price}<span> Kr</span></p></li>
-      <li class="list-inline-item"><p class="cartp">${this.prodTotal()}<span> Kr</span></p></li>             
+      <li class="list-inline-item"><p class="cartp">${this.price}<span>:-/st</span></p></li>
+      <li class="list-inline-item"><p class="cartp">Totalt: ${this.prodTotal()}<span>:-</span></p></li>             
   </ul>      
   </div>`
 }
