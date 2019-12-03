@@ -32,11 +32,12 @@ class Cart {
       cartItem.unit = 1;
       this.myCart.push(cartItem); 
     }
-   this.saveCart();    
+   this.saveCart();  
+   cartCounter(); 
    this.allSum();  
    this.allMoms();   
    this.renderOnDropdown();
-   this.pass();
+  //  this.pass();
 }
 
 increaseUnit(existingProduct)

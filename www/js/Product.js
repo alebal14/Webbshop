@@ -40,9 +40,17 @@ class Product {
       // add me to that cart    
       
       this.cart.add(new CartItem(this.id, this.name, this.image, this.price));  
-        
+
     });
   }  
+  
+  animate(){
+    console.log('animation');
+    $('body').on('click', `#buy-button-${this.id}`, e => {
+      e.preventDefault();
+
+    });
+  }
 
   render() {
     // This is how I render myself on a product-detail page
@@ -74,10 +82,12 @@ class Product {
         <a href="#${this.slug}">
           <h4>${this.name} ${this.price}:-</h4>
           <button id="buy-button-${this.id}" class="btn rounded-0 float-right btn-warning my-2">Köp</button>
-          <img class="img-fluid border border-primary" src="${this.image}">
+          <section class="productImage">
+          <img class="img-fluid border border-primary displayImage" src="${this.image}">
+          <img class="img-fluid border border-primary animationImage" id="animationImage-${this.id}" src="${this.image}">
+          </section>
         </a>
       </div>
     `
-  }
-
+  }  
 }
