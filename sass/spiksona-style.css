@@ -93,7 +93,7 @@ ul li:nth-child(4).active ~ .slide {
 .animationImage{
     position:absolute;
     left: 0;
-    top: 2;
+    top: 5;
 }
 
 

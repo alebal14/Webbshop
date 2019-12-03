@@ -41,15 +41,12 @@ class Product {
       
       this.cart.add(new CartItem(this.id, this.name, this.image, this.price));  
 
+      $(`#animationImage-${this.id}`).animate({
+        top: "-20%", left: "120%",width: "1px", height: "1px", borderRadius: "50%"
+      }, 
+      500, function () { $(this).removeAttr('style'); });
     });
-  }  
-  
-  animate(){
-    console.log('animation');
-    $('body').on('click', `#buy-button-${this.id}`, e => {
-      e.preventDefault();
 
-    });
   }
 
   render() {
@@ -68,7 +65,7 @@ class Product {
           <button id="buy-button-${this.id}" class="btn rounded-0 btn-warning my-2">Köp</button>
         </div>
         <div class="col-12 col-lg-3 view overlay">
-        <img class="img-fluid border border-primary" src="${this.image}">
+        <img class="img-fluid border border-primary animationImage" id="animationImage-${this.id}" src="${this.image}">
         </div>
       </section>
     `);
