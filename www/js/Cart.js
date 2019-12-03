@@ -1,12 +1,6 @@
 
 class Cart {
-  /*
-
-    I am a Cart.
-
-    I want to be a shopping-cart
-    but so far I am really stupid... 😢
-  */
+ 
  constructor(){
    this.myCart = [];   
    store.currentCartValue = 0;
@@ -56,8 +50,7 @@ localStorage.setItem('Cart',JSON.stringify(this.myCart));
 localStorage.setItem('currentCartValue', store.currentCartValue);
 }
 
-allSum(){
-  //summering av alla priser
+allSum(){  
   let total = 0;  
   for(var i=0; i<this.myCart.length; i++){
       total += this.myCart[i].price * this.myCart[i].unit;     
