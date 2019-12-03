@@ -32,7 +32,8 @@ class Cart {
       cartItem.unit = 1;
       this.myCart.push(cartItem); 
     }
-   this.saveCart();    
+   this.saveCart(); 
+   cartCounter();   
    this.allSum();  
    this.allMoms();   
    this.renderOnDropdown();
@@ -88,13 +89,24 @@ renderTotalUnit(){
 
 renderOnDropdown(){
   //render varukorg på dropdown i nav
-  $('#cartdropdown').html(`    
-    <section class="row">           
+  $('#cartdropdown').html(` 
+  <div class="col">  
+  <table class="table mb-0">
+  <thead>
+    <tr>
+      <th id="bild1" scope="col"></th>
+      <th id="cell" scope="col">Artikel</th>
+      <th id="cell" scope="col">pris</th>
+      <th id="cell" scope="col">Antal</th>
+    </tr>
+  </thead>
+  </table>
+  </div>
+  
       ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
-    <div class="col-3"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
+    <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
     <p class="totalsumma">Moms: ${this.allMoms()}:-</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
-    </section>
   `);
 }
 
