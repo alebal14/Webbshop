@@ -56,17 +56,22 @@ class CartItem {
 
 renderCartItemonDropdown(){
   return `
-  <div class="col-9 mb-1">
-  <ul class="cartDrop list-inline">
-      <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
-      <li class="list-inline-item"><p class="cartp">${this.name}</p></li>
-      <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
-      <li class="list-inline-item"><p class="cartp">${this.unit}</p></li>
-      <button onclick="cartCounter()"><i class="fas fa-plus"></i></button> 
-      <li class="list-inline-item"><p class="cartp">${this.price}<span> Kr</span></p></li>
-      <li class="list-inline-item"><p class="cartp">${this.prodTotal()}<span> Kr</span></p></li>             
-  </ul>      
-  </div>`
+  <div class="col-12 sm-3">
+  <table class="table table-striped">
+  <tbody>
+    <tr>
+      <td id="bild1"><img class="img-fluid border border-primary" src="${this.image}"></td>
+      <td id="cell">${this.name}</td>
+      <td id="cell">${this.price}:-</td>
+      <td id="cell"><span onclick="negCartCounter()">
+      <i id="minus" class="fas fa-minus"></i>
+ </span>${this.unit}<span onclick="cartCounter()">
+ <i id="plus" class="fas fa-plus"></i>
+</span> </td>
+    </tr>
+  </table>
+  </div>
+  `
 }
 
 }
