@@ -9544,42 +9544,40 @@ h4 {
   transition: 0.5s;
 }
 
-ul li {
-  width: 100px;
-  text-align: center;
+@media screen and (min-width: 992px) {
+  ul li {
+    width: 100px;
+    text-align: center;
+  }
+  .slide {
+    position: absolute;
+    background-color: #fff;
+    height: 15%;
+    width: 100px;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  ul li:nth-child(1).active ~ .slide {
+    left: 120px;
+  }
+  ul li:nth-child(2).active ~ .slide {
+    left: 220px;
+  }
+  ul li:nth-child(3).active ~ .slide {
+    left: 320px;
+  }
+  ul li:nth-child(4).active ~ .slide {
+    left: 420px;
+  }
 }
 
-.slide {
-  position: absolute;
-  background-color: #fff;
-  height: 15%;
-  width: 100px;
-  left: 0;
-  bottom: 0;
-  pointer-events: none;
-  transition: 0.5s;
+.cartIcon {
+  color: white;
 }
 
-ul li:nth-child(1).active ~ .slide {
-  left: 120px;
-}
-
-ul li:nth-child(2).active ~ .slide {
-  left: 220px;
-}
-
-ul li:nth-child(3).active ~ .slide {
-  left: 320px;
-}
-
-ul li:nth-child(4).active ~ .slide {
-  left: 420px;
-}
-
-/* .cartIcon{
-    color: white;
-}
-
+/* 
 .cartDrop{
     width: 800px;
 }

@@ -46,6 +46,8 @@ h4{
     background-color: green;
     transition: 0.5s;
 }
+@media screen and (min-width: 992px){
+
 ul li{
     width: 100px;
     text-align: center;
@@ -72,11 +74,12 @@ ul li:nth-child(3).active ~ .slide {
 ul li:nth-child(4).active ~ .slide {
     left: 420px;
 }
-
-/* .cartIcon{
-    color: white;
 }
 
+.cartIcon{
+    color: white;
+}
+/* 
 .cartDrop{
     width: 800px;
 }
