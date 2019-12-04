@@ -4,60 +4,70 @@ class orderformular{
         $('#link5').addClass('active')
         $('main').removeClass('startsida');
         $('main').html(/*html*/`
-          <div class="col orderform">
-          <form class="needs-validation" novalidate>
+          
+          <div class="container">
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 pt-5 pb-5 d-flex justify-content-center">
+    <form class="needs-validation" novalidate>
   <div class="form-row">
-    <div class="col-md-4 mb-3">
+    <div class="col-12 mb-3">
       <label for="validationTooltip01">Förnamn</label>
-      <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
-      <div class="valid-tooltip">
-        Looks good!
+      <input type="text" class="form-control" id="validationTooltip02" required>
+      <div class="invalid-tooltip">
+        Ange namn.
       </div>
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-12 mb-3">
       <label for="validationTooltip02">Efternamn</label>
-      <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
-      <div class="valid-tooltip">
-        Looks good!
+      <input type="text" class="form-control" id="validationTooltip02" required>
+      <div class="invalid-tooltip">
+        Ange Efternamn.
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-    <label for="validationCustom01">Email address</label>
+    <div class="col-12 mb-3">
+    <label for="validationCustom01">Email</label>
         <input type="email" class="form-control" id="validationCustom01" placeholder="name@example.com" required>
             <div class="invalid-tooltip">
-                Please provide a valid email.
+                Ange en giltig email.
       </div>
     </div>
   </div>
   <div class="form-row">
-    <div class="col-md-6 mb-3">
+    <div class="col-12 mb-3">
       <label for="validationTooltip03">Gatuadress</label>
-      <input type="text" class="form-control" id="validationTooltip03" required>
+      <input type="text" class="form-control" id="validationTooltip02" required>
       <div class="invalid-tooltip">
-        Please provide a valid city.
+        Ange en giltig Gatuadress.
       </div>
     </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">State</label>
-      <select class="custom-select" id="validationTooltip04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-tooltip">
-        Please select a valid state.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
+    <div class="col-12 mb-3">
       <label for="validationTooltip05">Postnummer</label>
       <input type="text" class="form-control" id="validationTooltip05" required>
       <div class="invalid-tooltip">
-        Please provide a valid zip.
+        Ange giltigt Postnummer.
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <label for="validationTooltip02">Ort</label>
+      <input type="text" class="form-control" id="validationTooltip02" required>
+      <div class="invalid-tooltip">
+        Ange en ort.
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-primary" type="submit">Skicka beställning</button>
 </form>
     </div>
+    <div class="col">
+    
+    </div>
+  </div>
+</div>
+     
+          
         `);
       }
 
