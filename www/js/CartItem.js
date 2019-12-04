@@ -47,7 +47,10 @@ class CartItem {
         <li class="list-inline-item"><p>${this.name}</p></li>
         <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
-        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>  
+        <div class="popup" onclick="popUpCall()">
+        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>
+        <span class="popuptext" id="myPopup">3 för 2 på alla våra varor</span>  
+        </div>
         <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
         <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>                     
     </ul>
@@ -74,6 +77,17 @@ renderCartItemonDropdown(){
   `
 }
 
+}
+function popUpCall() {
+  let popup = document.getElementById("myPopup");
+  let executed = localStorage.getItem('executed');
+  
+if (executed) {
+  popup.classList.remove("show");
+} else {
+  popup.classList.toggle("show");
+  localStorage.setItem('executed', true);
+}
 }
 
 
