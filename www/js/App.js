@@ -22,7 +22,8 @@ class App {
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),      
-      'page404': new Page404()
+      'page404': new Page404(),
+      'orderformular': new orderformular()
     };
     // A shop should always have a cart
     this.cart = new Cart();
