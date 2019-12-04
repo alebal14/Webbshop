@@ -30,7 +30,7 @@ class App {
     $(window).on('hashchange', () => this.changeRoute());
     // Load the products from JSON
     this.loadProducts();
-    this.loadCart();
+    
   }
 
   changeRoute() {
@@ -75,15 +75,15 @@ class App {
 async loadCart(){  
 
 
-  let loaditems = window.localStorage.getItem('Cart');
-  this.loadcartitems = [];
+  //let loaditems = window.localStorage.getItem('Cart');
+  //this.loadcartitems = [];
   
-  for (let loaditem of loaditems) {
+  /*for (let loaditem of loaditems) {
     let loadcartitem = new Cart(loaditem);
     this.loadcartitems.push(loadcartitem);    
   }
   
-  console.log('Din varukorg:' + loaditems);
+  console.log('Din varukorg:' + loaditems);*/
     
   this.routes.varukorg = this.cart; 
    
