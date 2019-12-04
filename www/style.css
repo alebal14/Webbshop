@@ -9660,10 +9660,6 @@ h4 {
   width: 15%;
 }
 
-.orderform {
-  padding-top: 60px;
-}
-
 @media screen and (max-width: 1000px) {
   .table {
     width: 85vw;
