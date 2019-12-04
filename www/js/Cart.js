@@ -2,9 +2,9 @@
 class Cart {
  
  constructor(){
-   this.myCart = [];   
+  this.myCart = localStorage.getItem(Cart) || []; 
    store.currentCartValue = 0;
-   this.clearCart();     
+       
  }
 
 
