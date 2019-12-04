@@ -7,15 +7,14 @@ class CartItem {
         this.unit = unit;  
         this.image = image;        
         this.loadCart();    
-        this.negCartCounter();            
+        this.negCartCounter();          
         
     }
     
       loadCart(){
-        const mydata= window.localStorage.getItem('Cart');        
+        const mydata= JSON.parse(localStorage.getItem('Cart'));        
         this.negCartCounter(mydata);
         }      
-
   
 
       clearCartitem(){
@@ -32,12 +31,15 @@ class CartItem {
 
       negCartCounter(mydata){
         $('body').on('click', `#negCartCounter-${this.id}`, e => { 
-            e.preventDefault();   
-                     
+            e.preventDefault();                      
               let amount = this.unit;
               amount--
-              mydata.splice(this.unit, amount);              
-              console.log(this.unit);         
+              const item = this;
+              item.amount--
+              mydata.splice(
+                mydata.findIndex(item => item.id === this.id),
+                item
+              );                                  
           });  
         }
      
@@ -50,7 +52,7 @@ class CartItem {
         <li class="list-inline-item"><p>${this.name}</p></li>
         <button id="negCartCounter-${this.id}"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
-        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>  
+        <button id="cartCounter-${this.id}"><i class="fas fa-plus"></i></button>  
         <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
         <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>                     
     </ul>
