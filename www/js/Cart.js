@@ -1,12 +1,6 @@
 
 class Cart {
-  /*
 
-    I am a Cart.
-
-    I want to be a shopping-cart
-    but so far I am really stupid... 😢
-  */
  constructor(){
    this.myCart = [];   
    store.currentCartValue = 0;
