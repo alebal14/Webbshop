@@ -6,8 +6,7 @@ class CartItem {
         this.price = price;
         this.unit = unit;  
         this.image = image;        
-        this.loadCart();    
-        this.negCartCounter(); 
+        this.loadCart();         
     }
     
      
@@ -15,7 +14,7 @@ class CartItem {
       let mydata = JSON.parse(localStorage.getItem('Cart'));
       this.negCartCounter(mydata);
       this.cartCounter(mydata);
-      return mydata;
+      return mydata
     }
 
 
@@ -70,7 +69,7 @@ class CartItem {
         <button id="negCartCounter-${this.id}"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
         <div class="popup" onclick="popUpCall()">
-        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>
+        <button id="cartCounter-${this.id}"><i class="fas fa-plus"></i></button>
         <span class="popuptext" id="myPopup">3 för 2 på alla våra varor</span>  
         </div>
         <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
