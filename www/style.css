@@ -9501,6 +9501,10 @@ main {
   max-width: 100px;
 }
 
+.logotypeProduct {
+  max-width: 200px;
+}
+
 .logotypestart {
   animation: fade 1s ease-in;
 }
@@ -9517,6 +9521,11 @@ main {
 
 .productDisplay:hover {
   text-decoration: none;
+}
+
+.productRubrik {
+  font-family: 'Bebas Neue', cursive;
+  color: #c00202;
 }
 
 * {
