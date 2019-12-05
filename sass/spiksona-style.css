@@ -15,6 +15,9 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 130%;
 }
+.containerPadding{ /* För att kompensera för navbar fixed-top */
+    padding-top:100px;
+}
 *{
     font-family: 'Open Sans', sans-serif;
 }
@@ -114,17 +117,6 @@ ul li:nth-child(4).active ~ .slide {
 .cartIcon{
     color: white;
 }
-/* 
-.cartDrop{
-    width: 800px;
-}
-.dropdown-menu{
-    padding: 0.5rem;
-}
-.totalsumma{
-    font-weight: bold;
-    margin-bottom: 0;
-}*/
 .productImage{
     position:relative;  
 }
@@ -133,8 +125,6 @@ ul li:nth-child(4).active ~ .slide {
     left: 0;
     top: 5;
 }
-
-
 .table{
     width: 40vw;
 }
