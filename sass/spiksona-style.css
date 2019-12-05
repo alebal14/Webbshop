@@ -8,6 +8,9 @@
 .logotype{
     max-width: 100px;
 }
+.logotypeProduct{
+    max-width: 200px;
+}
 .logotypestart{
     animation: fade 1s ease-in;
 }
@@ -17,6 +20,13 @@
 }
 .containerPadding{ /* För att kompensera för navbar fixed-top */
     padding-top:100px;
+}
+.productDisplay:hover{
+    text-decoration: none;
+}
+.productRubrik{
+    font-family: 'Bebas Neue', cursive;
+    color: #c00202;
 }
 *{
     font-family: 'Open Sans', sans-serif;
