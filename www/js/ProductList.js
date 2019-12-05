@@ -1,12 +1,5 @@
 class ProductList {
 
-
-  /*
-    I am a ProductList.
-    I know how to display my products.
-  */
-
-
   constructor(products) {
     this.products = products;
   }

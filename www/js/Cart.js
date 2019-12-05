@@ -1,6 +1,5 @@
-
 class Cart {
- 
+
  constructor(){
   this.loadCart();
   this.myCart = [];   
@@ -38,6 +37,7 @@ loadCart(){
    this.renderOnDropdown();
    this.TotalUnit();
    this.renderTotalUnit();
+
 }
 
 
@@ -138,7 +138,7 @@ render() {
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>:-</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>:-</span></div><br>
     <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right">Töm varukorg</button>
-    <button id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right">Gå till kassan</button>
+    <a type="button" id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right" href="#orderformular">Gå till kassan</a>
   `);
     } 
     
