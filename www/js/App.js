@@ -75,8 +75,10 @@ class App {
 async loadCart(){  
 
 
+
   let loaditems = window.localStorage.getItem('Cart');
   this.loadcartitems = [];
+
   
   for (let loaditem of loaditems) {
     let loadcartitem = new Cart(loaditem);
@@ -85,8 +87,7 @@ async loadCart(){
   
   console.log('Din varukorg:' + loaditems);
     
-  this.routes.varukorg = this.cart; 
-   
+  this.routes.varukorg = this.cart;    
   this.changeRoute();
 }
   

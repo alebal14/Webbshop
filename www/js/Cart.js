@@ -2,9 +2,10 @@
 class Cart {
  
  constructor(){
-  this.myCart = localStorage.getItem(Cart) || []; 
+
+  this.myCart = []; 
    store.currentCartValue = 0;
-       
+
  }
 
 
@@ -34,6 +35,8 @@ class Cart {
    this.TotalUnit();
    this.renderTotalUnit();
 }
+
+
 
 increaseUnit(existingProduct)
 {
