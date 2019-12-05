@@ -9515,6 +9515,10 @@ main {
   padding-top: 100px;
 }
 
+.productDisplay:hover {
+  text-decoration: none;
+}
+
 * {
   font-family: 'Open Sans', sans-serif;
 }

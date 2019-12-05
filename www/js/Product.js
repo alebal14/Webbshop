@@ -43,14 +43,17 @@ class Product {
 
   renderInList() {
     return `
-      <div class="col-12 col-md-6 col-lg-4 mt-5">
-        <a href="#${this.slug}">
-          <h4>${this.name} ${this.price}:-</h4>
-          <button id="buy-button-${this.id}" class="btn rounded-0 float-right btn-warning my-2">Köp</button>
+      <div class="col-12 col-md-4 col-lg-3 mt-5">
+        <a class="productDisplay" href="#${this.slug}">
+          <h4>${this.name}</h4>
+          <div class="productOverlay"></div>
           <section class="productImage">
           <img class="img-fluid border border-primary displayImage" src="${this.image}">
           <img class="img-fluid border border-primary animationImage" id="animationImage-${this.id}" src="${this.image}">
           </section>
+          
+          <h4>${this.price}:-</h4>
+          <button id="buy-button-${this.id}" class="btn rounded-0 float-right btn-warning my-2">Köp</button>
         </a>
       </div>
     `

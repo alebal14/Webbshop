@@ -18,6 +18,9 @@
 .containerPadding{ /* För att kompensera för navbar fixed-top */
     padding-top:100px;
 }
+.productDisplay:hover{
+    text-decoration: none;
+}
 *{
     font-family: 'Open Sans', sans-serif;
 }
