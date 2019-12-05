@@ -7,16 +7,14 @@ class CartItem {
         this.unit = unit;  
         this.image = image;        
         this.loadCart();    
-        this.negCartCounter();            
+        this.negCartCounter();      
         
     }
     
       loadCart(){
-        const mydata= window.localStorage.getItem('Cart');        
-        this.negCartCounter(mydata);
-        }      
-
-  
+        let mydata= JSON.parse(localStorage.getItem(this.myCart));
+        return mydata;
+      }
 
       clearCartitem(){
         //lägg till knapp+knyta till localstorages 
@@ -30,14 +28,13 @@ class CartItem {
         return totalprice  
       }
 
-      negCartCounter(mydata){
+      negCartCounter(){
         $('body').on('click', `#negCartCounter-${this.id}`, e => { 
-            e.preventDefault();   
-                     
-              let amount = this.unit;
-              amount--
-              mydata.splice(this.unit, amount);              
-              console.log(this.unit);         
+            e.preventDefault();             
+              //let amount = this.unit;
+              //amount--
+              //this.myCart.splice(this.unit, amount);              
+              //console.log(this.unit);         
           });  
         }
      
@@ -48,7 +45,7 @@ class CartItem {
     <ul class="cartlist list-inline">
         <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
         <li class="list-inline-item"><p>${this.name}</p></li>
-        <button id="negCartCounter-${this.id}"><i class="fas fa-minus"></i></button>
+        <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
         <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>  
         <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>

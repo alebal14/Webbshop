@@ -1,22 +1,20 @@
 
 class Cart {
  
- constructor(){      
-  const cart = [];
-  if(localStorage.getItem('Cart')) cart.push(localStorage.getItem('Cart'));
-  this.myCart = cart;
-  console.log(this.myCart)
+ constructor(){
+  this.myCart = localStorage.getItem(Cart) || []; 
+   store.currentCartValue = 0;
+       
  }
 
- 
 
- /*clearCart(){
+ clearCart(){
   $('body').on('click', `#removeBtn`, e => {    
     e.preventDefault();
     localStorage.clear();    
     new App();
   });  
-}*/
+}
 
  add(cartItem) {
   const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
@@ -49,7 +47,7 @@ increaseUnit(existingProduct)
 
 saveCart(){
 localStorage.setItem('Cart',JSON.stringify(this.myCart));
-
+localStorage.setItem('currentCartValue', store.currentCartValue);
 }
 
 allSum(){  
@@ -98,7 +96,7 @@ renderOnDropdown(){
   </table>
   </div>
   
-      
+      ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
     <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
     <p class="totalsumma">Moms: ${this.allMoms()}:-</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
@@ -128,7 +126,7 @@ render() {
     </section>    
     <section class="row">
       <!-- Notice the "loop" using the array map method -->      
-      
+      ${this.myCart.map(item => item.render()).join('')}
     </section>
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>:-</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>:-</span></div><br>
@@ -139,8 +137,6 @@ render() {
     
     $('main').removeClass('startsida')
 }
-/*${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}*/
-/*${this.myCart.map(item => item.render()).join('')}*/
 }
 
 function clearCart(){
