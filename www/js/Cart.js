@@ -2,12 +2,15 @@
 class Cart {
  
  constructor(){
-
-  this.myCart = []; 
-   store.currentCartValue = 0;
-
+  this.loadCart();
+  this.myCart = [];   
+  //store.currentCartValue = 0;  
  }
 
+loadCart(){
+  this.myCart = JSON.parse(localStorage.getItem('Cart'));  
+  return this.myCart
+}
 
  clearCart(){
   $('body').on('click', `#removeBtn`, e => {    
@@ -27,8 +30,9 @@ class Cart {
       cartItem.unit = 1;
       this.myCart.push(cartItem); 
     }
+
    this.saveCart(); 
-   cartCounter();   
+   //cartCounter();   
    this.allSum();  
    this.allMoms();   
    this.renderOnDropdown();
@@ -142,7 +146,7 @@ render() {
 }
 }
 
-function clearCart(){
+/*function clearCart(){
   localStorage.clear();
   alert('Local storage rensat lol');
   document.getElementById('cartValue').innerHTML = (store.currentCartValue = 0);
@@ -160,7 +164,7 @@ else{
   store.currentCartValue = 0;
   alert('Inga varor i varukorgen!');
 }
-}
+}*/
 
 
 

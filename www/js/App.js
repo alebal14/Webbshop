@@ -22,7 +22,8 @@ class App {
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),      
-      'page404': new Page404()
+      'page404': new Page404(),
+      
     };
     // A shop should always have a cart
     this.cart = new Cart();
@@ -57,6 +58,7 @@ class App {
     let productsData = await $.getJSON('/json/products.json');
     // We will convert the raw JSON data to instances of Product
     // and store them in this.products
+    
     this.products = [];
     // Loop through the JSON data and create Products
     for (let productData of productsData) {
@@ -72,21 +74,9 @@ class App {
     this.changeRoute();
   }
 
-async loadCart(){  
-
-
-
+loadCart(){  
   let loaditems = window.localStorage.getItem('Cart');
-  this.loadcartitems = [];
-
-  
-  for (let loaditem of loaditems) {
-    let loadcartitem = new Cart(loaditem);
-    this.loadcartitems.push(loadcartitem);    
-  }
-  
   console.log('Din varukorg:' + loaditems);
-    
   this.routes.varukorg = this.cart;    
   this.changeRoute();
 }

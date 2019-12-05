@@ -7,16 +7,10 @@ class CartItem {
         this.unit = unit;  
         this.image = image;        
         this.loadCart();    
-        this.negCartCounter();      
-        
+        this.negCartCounter(); 
     }
     
-      loadCart(){
-        let mydata= JSON.parse(localStorage.getItem(this.myCart));
-        return mydata;
      
-    }
-    
     loadCart(){
       let mydata = JSON.parse(localStorage.getItem('Cart'));
       this.negCartCounter(mydata);
@@ -36,11 +30,9 @@ class CartItem {
         return totalprice  
       }
 
-      negCartCounter(){
+      negCartCounter(mydata){
         $('body').on('click', `#negCartCounter-${this.id}`, e => { 
-
-            e.preventDefault();
-                    
+            e.preventDefault();                    
             const item = this;
             item.unit--
             mydata.splice(
@@ -49,12 +41,12 @@ class CartItem {
             );     
             mydata.push(item);
             localStorage.setItem('Cart',JSON.stringify(mydata));
-            this.newCart();
+            
           });  
         }
 
         cartCounter(mydata){
-          $('body').on('click', `#cartCounter-${this.id}`, e => { 
+          $('body').on('click', `#cartCounter-${this.id}`, e => {
               e.preventDefault();             
                        
               const item = this;
@@ -66,10 +58,7 @@ class CartItem {
             });  
           }
      
-       newCart(){
-        let cart = new Cart();
-        return cart;
-       }
+      
         
 
    render(){
@@ -78,7 +67,7 @@ class CartItem {
     <ul class="cartlist list-inline">
         <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
         <li class="list-inline-item"><p>${this.name}</p></li>
-        <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
+        <button id="negCartCounter-${this.id}"><i class="fas fa-minus"></i></button>
         <li class="list-inline-item"><p>${this.unit}</p></li>
         <button id="cartCounter-${this.id}"><i class="fas fa-plus"></i></button>  
         <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
