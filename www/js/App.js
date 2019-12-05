@@ -75,18 +75,17 @@ class App {
 async loadCart(){  
 
 
-  let loaditems = window.localStorage.getItem('Cart');
-  this.loadcartitems = [];
+  window.localStorage.getItem('Cart');
+ // this.loadcartitems = [];
   
-  for (let loaditem of loaditems) {
+  /*for (let loaditem of loaditems) {
     let loadcartitem = new Cart(loaditem);
     this.loadcartitems.push(loadcartitem);    
   }
   
-  console.log('Din varukorg:' + loaditems);
+  console.log('Din varukorg:' + loaditems);*/
     
-  this.routes.varukorg = this.cart; 
-   
+  this.routes.varukorg = this.cart;    
   this.changeRoute();
 }
   
