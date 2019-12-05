@@ -11,9 +11,12 @@
 .logotypestart{
     animation: fade 1s ease-in;
 }
-.navbar{
+.nav-link{
     font-family: 'Bebas Neue', cursive;
     font-size: 130%;
+}
+*{
+    font-family: 'Open Sans', sans-serif;
 }
 .logotext {
     color: white;
