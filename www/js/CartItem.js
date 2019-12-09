@@ -5,11 +5,10 @@ class CartItem {
         this.name = name;        
         this.price = price;
         this.unit = unit;  
-        this.image = image;        
+        this.image = image;
         this.loadCart();    
-        this.negCartCounter();      
-        
-    }
+        this.negCartCounter();
+}
     
       loadCart(){
         let mydata= JSON.parse(localStorage.getItem(this.myCart));
@@ -41,20 +40,29 @@ class CartItem {
 
    render(){
     return `
-    <div class="col-12">
-    <ul class="cartlist list-inline">
-        <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>  
-        <li class="list-inline-item"><p>${this.name}</p></li>
-        <button onclick="negCartCounter()"><i class="fas fa-minus"></i></button>
-        <li class="list-inline-item"><p>${this.unit}</p></li>
-        <div class="popup" onclick="popUpCall()">
-        <button onclick="cartCounter()"><i class="fas fa-plus"></i></button>
-        <span class="popuptext" id="myPopup">3 för 2 på alla våra varor</span>  
-        </div>
-        <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
-        <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>                     
-    </ul>
-    </div>`  
+    <div class="row">
+    <div class="hej2 col-2">
+    <li class="list-inline-item"><img class="img-fluid border border-primary" src="${this.image}"></li>
+    </div>
+    <div class="hej col-3">
+    <li class="list-inline-item"><p>${this.name}</p></li>
+    </div>
+    <div class="hej col-2">
+    <i id="minus" class="fas fa-minus"></i>
+ </span>${this.unit}<span onclick="cartCounter()">
+ <i id="plus" class="fas fa-plus"></i> 
+    </div>
+    <div class="hej col-2">
+    <li class="list-inline-item"><p>${this.price}<span>:-/st</span></p></li>
+    </div>
+    <div class="hej col-2">
+    <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>
+    </div>
+    <div class="hej col-1">
+    <i class="fas fa-trash-alt"></i>
+    </div>
+    </div>
+  `  
 }
 
 renderCartItemonDropdown(){

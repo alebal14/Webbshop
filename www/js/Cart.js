@@ -1,9 +1,9 @@
 class Cart {
 
  constructor(){
-   this.myCart = [];   
+   this.myCart = []; 
    store.currentCartValue = 0;
-   this.clearCart();     
+   this.clearCart(); 
  }
 
 
@@ -84,9 +84,11 @@ renderOnDropdown(){
   </div>
   
       ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
-    <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
+    <div class="test">
+      <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
     <p class="totalsumma">Moms: ${this.allMoms()}:-</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
+    </div>
   `);
 }
 
@@ -107,19 +109,54 @@ render() {
   `);
     } else {
       $('main').html(`
-    <section class="row">
-      <div class="col">
-        <h1>Varukorgen</h1>
-      </div>
-    </section>    
-    <section class="row">
-      <!-- Notice the "loop" using the array map method -->      
+      <div class="container">
+  <div class="hej2 row pt-3">
+    <div class="hej col-8">
+    <div class="row">
+    
+    <div class="hej col-2">
+        
+    </div>
+    <div class="hej col-3">
+        Namn
+    </div>
+    <div class="hej col-2">
+        Antal
+    </div>
+    <div class="hej col-2">
+        Pris/st
+    </div>
+    <div class="hej col-2">
+        tot
+    </div>
+    <div class="hej col-1">
+        
+    </div>
+    </div>
+    
+   <div class="row">
+      <div class="hej col-12 pt-5">
       ${this.myCart.map(item => item.render()).join('')}
-    </section>
+      </div>
+   </div>
+    
+    
+    </div>
+    <div class="col-4 pt-5">
+    <div class="hej3 row">
+    <div class="col-12">
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>:-</span></div><br>
     <div class="float-right">Moms: <span>${this.allMoms()}</span><span>:-</span></div><br>
-    <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right">Töm varukorg</button>
+    <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right"><i class="far fa-trash-alt"></i> Töm varukorg</button>
     <a type="button" id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right" href="#orderformular">Gå till kassan</a>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
   `);
     } 
     
@@ -146,6 +183,3 @@ else{
   alert('Inga varor i varukorgen!');
 }
 }
-
-
-

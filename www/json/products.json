@@ -10,11 +10,11 @@
   },
   {
     "id": 2,
-    "slug": "produkter-ryggborste",
-    "name": "Ryggborste",
+    "slug": "produkter-556",
+    "name": "5-56",
     "price": 149,
-    "image": "/images/ryggborste.jpg",
-    "description": "En genuin ryggborste. Ergonomisk och bra på att ta bort döda hudceller.",
+    "image": "/images/5-56.jpg",
+    "description": "5-55, bra till allt.",
     "vikt": 0.5
   },
   {
