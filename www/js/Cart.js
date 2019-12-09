@@ -100,9 +100,10 @@ render() {
       </div>
     </section>    
     <section class="row">
+    <section class="col">
       <h1>Tomt</h1>
     </section>
-    
+    </section>
   `);
     } else {
       $('main').html(`
