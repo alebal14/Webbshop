@@ -9611,17 +9611,6 @@ h4 {
   color: white;
 }
 
-/* 
-.cartDrop{
-    width: 800px;
-}
-.dropdown-menu{
-    padding: 0.5rem;
-}
-.totalsumma{
-    font-weight: bold;
-    margin-bottom: 0;
-}*/
 .productImage {
   position: relative;
 }
@@ -9630,6 +9619,10 @@ h4 {
   position: absolute;
   left: 0;
   top: 5;
+}
+
+.test {
+  padding-left: 10px;
 }
 
 .table {
@@ -9677,4 +9670,17 @@ h4 {
   #bild1 {
     width: 0%;
   }
+}
+
+.hej {
+  border: 1px solid black;
+}
+
+.hej2 {
+  border: 1px solid black;
+}
+
+.hej3 {
+  position: sticky;
+  top: 20px;
 }

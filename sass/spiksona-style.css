@@ -111,17 +111,7 @@ ul li:nth-child(4).active ~ .slide {
 .cartIcon{
     color: white;
 }
-/* 
-.cartDrop{
-    width: 800px;
-}
-.dropdown-menu{
-    padding: 0.5rem;
-}
-.totalsumma{
-    font-weight: bold;
-    margin-bottom: 0;
-}*/
+
 .productImage{
     position:relative;  
 }
@@ -131,6 +121,9 @@ ul li:nth-child(4).active ~ .slide {
     top: 5;
 }
 
+.test{
+    padding-left: 10px;
+}
 
 .table{
     width: 40vw;
@@ -177,4 +170,17 @@ ul li:nth-child(4).active ~ .slide {
     #bild1 {
         width: 0%;
     }
+}
+
+.hej{
+    border: 1px solid black;
+}
+
+.hej2{
+    border: 1px solid black;
+} 
+.hej3{
+    
+    position: sticky;
+    top: 20px;
 }

@@ -27,7 +27,6 @@ class Product {
     // * if you clicked inside something matching the css-selector
     //   #buy-button-myId 
     // * then run the anonymous arrow function... 
-   
     $('body').on('click', `#buy-button-${this.id}`, e => {
       // e is the event object
       // it has a preventDefault method      
