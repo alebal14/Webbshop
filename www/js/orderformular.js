@@ -42,11 +42,22 @@ class OrderFormular{
 $('body').on('submit', '#my-form', readFormorderData)
 function readFormorderData(e){
   e.preventDefault()
+  let day = new Date();
+  let d = day.getDate();
+  let month = new Date();
+  let m = month.getMonth();
+  let year = new Date();
+  let y = year.getFullYear();
+  let time = Date.now();
+
   let orderData = {}
   orderData['name'] = $('#name').val()
   orderData['email'] = $('#email').val()
-  orderData['adress'] = $('#adress').val();
+  orderData['adress'] = $('#adress').val()
   orderData['message'] = $('#message').val() 
+  orderData['dag'] = d; 
+  orderData['månad'] = (m+1); 
+  orderData['år'] = y; 
 console.log(orderData);
 
 if (localStorage.getItem("Orderformulär1") === null) {
@@ -57,9 +68,16 @@ if (localStorage.getItem("Orderformulär1") === null) {
 
 localStorage.setItem(`Orderformulär${orderId}`,JSON.stringify(orderData));
 document.getElementById("my-form").reset();
-fetchOrderData();
+// console.log(Date.now())
 }
 
 function fetchOrderData(){
-console.log("fetch");
+  let day = new Date();
+  let d = day.getDate();
+  let month = new Date();
+  let m = month.getMonth();
+  let year = new Date();
+  let y = year.getFullYear();
+  let time = Date.now();
+  console.log("Tid: " + time + ",  Dag: " + d + ", Månad: " + (m+1) + ", År: " +y);
 }
