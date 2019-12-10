@@ -1,4 +1,4 @@
-class orderformular{
+class OrderFormular{
 
     render() {
         $('#link5').addClass('active')
@@ -76,25 +76,6 @@ class orderformular{
           
         `);
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

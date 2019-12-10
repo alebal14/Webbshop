@@ -23,7 +23,7 @@ class App {
       '': new StartPage(),
       'omoss': new AboutUs(),      
       'page404': new Page404(),
-      'orderformular': new orderformular()
+      'orderformular': new OrderFormular()
     };
     // A shop should always have a cart
     this.cart = new Cart();
@@ -74,13 +74,9 @@ class App {
   }
 
 async loadCart(){  
-
-  var myCartItems = localStorage.getItem(this.myCart);
-  
-  console.log('Din varukorg:' + myCartItems);
-    
-  this.routes.varukorg = this.cart; 
-   
+  var myCartItems = localStorage.getItem(this.myCart);  
+  console.log('Din varukorg:' + myCartItems);    
+  this.routes.varukorg = this.cart;    
   this.changeRoute();
 }
   
