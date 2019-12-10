@@ -9769,3 +9769,7 @@ h4 {
   position: sticky;
   top: 100px;
 }
+
+#formrow {
+  min-height: 50vh;
+}

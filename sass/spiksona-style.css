@@ -253,3 +253,7 @@ ul li:nth-child(4).active ~ .slide {
     position: sticky;
     top: 100px;
 }
+
+#formrow{
+    min-height: 50vh;
+}
