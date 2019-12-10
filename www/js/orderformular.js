@@ -65,6 +65,12 @@ class orderformular{
     
     </div>
   </div>
+
+  <div class="row">
+      <div class="col-12">
+      hejhej
+      </div>
+  </div> 
 </div>
      
           

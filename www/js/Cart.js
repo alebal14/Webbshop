@@ -127,7 +127,7 @@ render() {
         Pris/st
     </div>
     <div class="hej col-2">
-        tot
+        Totalt
     </div>
     <div class="hej col-1">
         
