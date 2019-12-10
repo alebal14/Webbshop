@@ -1,3 +1,4 @@
+let orderId = 0;
 class OrderFormular{
 
     render() {
@@ -21,33 +22,44 @@ class OrderFormular{
   <div class="mb-3">
     <textarea class="col-12 col-md-8" id="message" placeholder="Meddelande till avsändare"></textarea>
   </div>
-  <input type="submit" value="Skicka">
+  <input class="btn rounded-0 btn-warning my-2" type="submit" value="Beställ">
 </form>
     </div>
   </div>
   <div class="row">
       <div class="col-12 mt-5">
-      <h6>Tidigare beställningar:</h6>
+      <h5>Tidigare beställningar:</h5>
+      <div class="orderHistory col-12">
+
+      </div>
       </div>
   </div> 
 </div>
-     
         `);
       }
 }
 
 $('body').on('submit', '#my-form', readFormorderData)
-
-// event-handler
 function readFormorderData(e){
-  e.preventDefault() // inte ladda om sidan..
+  e.preventDefault()
   let orderData = {}
-
-  // "vanliga" input-fält:
   orderData['name'] = $('#name').val()
   orderData['email'] = $('#email').val()
   orderData['adress'] = $('#adress').val();
-  // text area
   orderData['message'] = $('#message').val() 
 console.log(orderData);
+
+if (localStorage.getItem("Orderformulär1") === null) {
+  orderId = 1;
+} else {
+  orderId += 1;
+}
+
+localStorage.setItem(`Orderformulär${orderId}`,JSON.stringify(orderData));
+document.getElementById("my-form").reset();
+fetchOrderData();
+}
+
+function fetchOrderData(){
+console.log("fetch");
 }
