@@ -26,14 +26,6 @@ class OrderFormular {
       orderData['månad'] = (m + 1);
       orderData['år'] = y;
       console.log(orderData);
-
-      // if (localStorage.getItem("Orderformulär1") === null) {
-      //   orderId = 1;
-      // } else {
-      //   orderId += 1;
-      // }
-
-      // localStorage.setItem(`Orderformulär${orderId}`, JSON.stringify(orderData));
       store.orderArray.push(orderData);
       store.save();
       document.getElementById("my-form").reset();
@@ -42,9 +34,6 @@ class OrderFormular {
   }
 
   fetchOrderData(orderData) {
-    // let orderData = JSON.parse(localStorage.getItem(`Orderformulär${orderId}`));
-    // $('.orderHistory').append("<p><strong>Namn: </strong> " + orderData.name + "<strong> Email: </strong>" + orderData.email + "<strong> Adress: </strong>" + orderData['adress'] + "<strong> Meddelande: </strong>" + orderData['message'] + "<strong> Datum: </strong>" + orderData.dag + "-" + orderData.månad + "-" + orderData.år + "</p>");
-    
     $('.orderHistory').empty();
     for (let i = 0; i < store.orderArray.length; i++) {
       $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${store.orderArray[i].name}
@@ -65,16 +54,16 @@ class OrderFormular {
     <div class="col-12 mt-5">
     <form id="my-form" class="h-100">
   <div class="mb-3">
-    <input class="col-12 col-md-8" id="name" placeholder="Namn">
+    <input class="col-12 col-md-8" id="name" placeholder="Namn" required>
   </div>
   <div class="mb-3">
-    <input class="col-12 col-md-8" id="email" type="email" placeholder="Email-adress">
+    <input class="col-12 col-md-8" id="email" type="email" placeholder="Email-adress" required>
   </div>
   <div class="mb-3">
-  <input class="col-12 col-md-8" id="adress" type="adress" placeholder="Adress">
+  <input class="col-12 col-md-8" id="adress" type="adress" placeholder="Adress" required>
 </div>
   <div class="mb-3">
-    <textarea class="col-12 col-md-8" id="message" placeholder="Meddelande till avsändare"></textarea>
+    <textarea class="col-12 col-md-8" id="message" placeholder="Meddelande till avsändare: (Det här fältet är frivilligt. Meddelande kan komma att bidra med längre behandlingstid för din beställning.)"></textarea>
   </div>
   <input class="btn rounded-0 btn-warning my-2" type="submit" value="Beställ">
 </form>
