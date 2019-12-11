@@ -1,10 +1,53 @@
 let orderId = 0;
-class OrderFormular{
+class OrderFormular {
 
-    render() {
-        $('#link5').addClass('active')
-        $('main').removeClass('startsida');
-        $('main').html(/*html*/`
+  constructor() {
+    // OrderFormular.orderId = 0;
+    this.submitButtonListener();
+  }
+
+  submitButtonListener() {
+    $('body').on('submit', '#my-form', e => {
+      e.preventDefault()
+      let day = new Date();
+      let d = day.getDate();
+      let month = new Date();
+      let m = month.getMonth();
+      let year = new Date();
+      let y = year.getFullYear();
+      let time = Date.now();
+
+      let orderData = {}
+      orderData['name'] = $('#name').val()
+      orderData['email'] = $('#email').val()
+      orderData['adress'] = $('#adress').val()
+      orderData['message'] = $('#message').val()
+      orderData['dag'] = d;
+      orderData['månad'] = (m + 1);
+      orderData['år'] = y;
+      console.log(orderData);
+
+      if (localStorage.getItem("Orderformulär1") === null) {
+        orderId = 1;
+      } else {
+        orderId += 1;
+      }
+
+      localStorage.setItem(`Orderformulär${orderId}`, JSON.stringify(orderData));
+      document.getElementById("my-form").reset();
+      this.fetchOrderData();
+    });
+  }
+
+  fetchOrderData() {
+    let orderData = JSON.parse(localStorage.getItem(`Orderformulär${orderId}`));
+    $('.orderHistory').append("<p><strong>Namn: </strong> " + orderData['name'] + "<strong> Email: </strong>" + orderData['email'] + "<strong> Adress: </strong>" + orderData['adress'] + "<strong> Meddelande: </strong>" + orderData['message'] + "<strong> Datum: </strong>" + orderData['dag'] + "-" + orderData['månad'] + "-" + orderData['år'] + "</p>");
+  }
+
+  render() {
+    $('#link5').addClass('active')
+    $('main').removeClass('startsida');
+    $('main').html(/*html*/`
           
   <div class="container text-center">
   <div class="row" id="formrow">
@@ -36,48 +79,5 @@ class OrderFormular{
   </div> 
 </div>
         `);
-      }
-}
-
-$('body').on('submit', '#my-form', readFormorderData)
-function readFormorderData(e){
-  e.preventDefault()
-  let day = new Date();
-  let d = day.getDate();
-  let month = new Date();
-  let m = month.getMonth();
-  let year = new Date();
-  let y = year.getFullYear();
-  let time = Date.now();
-
-  let orderData = {}
-  orderData['name'] = $('#name').val()
-  orderData['email'] = $('#email').val()
-  orderData['adress'] = $('#adress').val()
-  orderData['message'] = $('#message').val() 
-  orderData['dag'] = d; 
-  orderData['månad'] = (m+1); 
-  orderData['år'] = y; 
-console.log(orderData);
-
-if (localStorage.getItem("Orderformulär1") === null) {
-  orderId = 1;
-} else {
-  orderId += 1;
-}
-
-localStorage.setItem(`Orderformulär${orderId}`,JSON.stringify(orderData));
-document.getElementById("my-form").reset();
-// console.log(Date.now())
-}
-
-function fetchOrderData(){
-  let day = new Date();
-  let d = day.getDate();
-  let month = new Date();
-  let m = month.getMonth();
-  let year = new Date();
-  let y = year.getFullYear();
-  let time = Date.now();
-  console.log("Tid: " + time + ",  Dag: " + d + ", Månad: " + (m+1) + ", År: " +y);
+  }
 }
