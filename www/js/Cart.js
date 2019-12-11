@@ -110,39 +110,39 @@ render() {
     } else {
       $('main').html(`
       <div class="container">
-  <div class="hej2 row pt-3">
-    <div class="hej col-8">
+  <div class="row pt-3">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-8">
     <div class="row">
     
-    <div class="hej col-2">
+    <div class="col-2">
         
     </div>
-    <div class="hej col-3">
+    <div class="kundkorgTop col-3">
         Namn
     </div>
-    <div class="hej col-2">
+    <div class="kundkorgTop col-2">
         Antal
     </div>
-    <div class="hej col-2">
+    <div class="kundkorgTop col-2">
         Pris/st
     </div>
-    <div class="hej col-2">
+    <div class="kundkorgTop col-2">
         Totalt
     </div>
-    <div class="hej col-1">
+    <div class="col-1">
         
     </div>
     </div>
     
    <div class="row">
-      <div class="hej col-12 pt-5">
+      <div class="col-12 pt-5">
       ${this.myCart.map(item => item.render()).join('')}
       </div>
    </div>
     
     
     </div>
-    <div class="col-4 pt-5">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
     <div class="hej3 row">
     <div class="col-12">
     <div class="float-right">Total Summa: <span>${this.allSum()}</span><span>:-</span></div><br>
