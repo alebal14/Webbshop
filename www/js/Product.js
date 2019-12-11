@@ -11,12 +11,26 @@ class Product {
     $('body').on('click', `#buy-button-${this.id}`, e => {
       e.preventDefault();
       
-      this.cart.add(new CartItem(this.id, this.name, this.image, this.price));  
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price)); 
 
-      $(`#animationImage-${this.id}`).animate({
-        top: "-20%", left: "120%",width: "1px", height: "1px", borderRadius: "50%"
+      let cartPos = $(".cartIcon").offset()
+      let image =  $(`.displayImage-${this.id}`);
+      console.log(`.displayImage-${this.id}`)
+      let width = image.width();
+      let height = image.height();
+      let {top, left} = image.offset();
+      let clone = image.clone();
+      clone.css({
+        top, left, width, height, position: "absolute", zIndex: 10000
+      })
+
+      $('body').append(clone);
+
+      clone.animate({
+        top: cartPos.top, left: cartPos.left + 10, width: 1, height: 1, borderRadius: "50%"
       }, 
-      500, function () { $(this).removeAttr('style'); });
+      800, function () { clone.remove(); });
+     
     });
 
   }
@@ -26,7 +40,7 @@ class Product {
     $('main').html(/*html*/ `
     <section class="row mt-5">
     <div class="col-8 col-md-6 col-lg-6">
-    <img class="img-fluid border border-primary animationImage" id="animationImage-${this.id}" src="${this.image}">
+    <img class="img-fluid border border-primary displayImage-${this.id}" src="${this.image}">
     </div>
         <div class="col-4 col-md-6 col-lg-6">
           <h1>${this.name}</h1>
@@ -45,8 +59,7 @@ class Product {
           <h4>${this.name}</h4>
           <div class="productOverlay"></div>
           <section class="productImage pb-1">
-          <img class="img-fluid border border-primary displayImage" src="${this.image}">
-          <img class="img-fluid border border-primary animationImage" id="animationImage-${this.id}" src="${this.image}">
+          <img class="img-fluid border border-primary displayImage-${this.id}" src="${this.image}">
           </section>
           <h4>${this.price}:-</h4>
           <button id="buy-button-${this.id}" class="btn rounded-0 float-right btn-warning">Köp</button>
