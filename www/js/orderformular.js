@@ -4,6 +4,10 @@ class OrderFormular {
   constructor() {
     // OrderFormular.orderId = 0;
     this.submitButtonListener();
+    $('body').on('click', '.sortOrder', () => {
+      this.reverse = !this.reverse;
+      this.fetchOrderData()
+    });
   }
 
   submitButtonListener() {
@@ -15,32 +19,34 @@ class OrderFormular {
       let m = month.getMonth();
       let year = new Date();
       let y = year.getFullYear();
-      let time = Date.now();
-
       let orderData = {}
       orderData['name'] = $('#name').val()
       orderData['email'] = $('#email').val()
       orderData['adress'] = $('#adress').val()
       orderData['message'] = $('#message').val()
-      orderData['dag'] = d;
-      orderData['månad'] = (m + 1);
-      orderData['år'] = y;
+      orderData['day'] = d;
+      orderData['month'] = (m + 1);
+      orderData['year'] = y;
       console.log(orderData);
       store.orderArray.push(orderData);
       store.save();
       document.getElementById("my-form").reset();
-      this.fetchOrderData(orderData);
+      this.fetchOrderData();
     });
   }
 
-  fetchOrderData(orderData) {
+  fetchOrderData() {
+    console.log(this.reverse);
     $('.orderHistory').empty();
-    for (let i = 0; i < store.orderArray.length; i++) {
-      $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${store.orderArray[i].name}
-       <strong> Email: </strong> ${store.orderArray[i].email} 
-       <strong> Adress: </strong> ${store.orderArray[i].adress} 
-       <strong> Meddelande: </strong>${store.orderArray[i].message}
-       <strong> Datum: </strong> ${store.orderArray[i].dag}-${store.orderArray[i].månad}-${store.orderArray[i].år}</p></section>`);
+    let toList = [...store.orderArray];
+    this.reverse && toList.reverse();
+    $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
+    for (let order of toList) {
+      $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${order.name}
+       <strong> Email: </strong> ${order.email} 
+       <strong> Adress: </strong> ${order.adress} 
+       <strong> Meddelande: </strong>${order.message}
+       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}</p></section>`);
     }
   }
 
@@ -51,7 +57,8 @@ class OrderFormular {
           
   <div class="container text-center">
   <div class="row" id="formrow">
-    <div class="col-12 mt-5">
+    <div class="col-12 mt-4">
+    <h2 class="mb-4">Fyll i din information</h2>
     <form id="my-form" class="h-100">
   <div class="mb-3">
     <input class="col-12 col-md-8" id="name" placeholder="Namn" required>
@@ -71,7 +78,7 @@ class OrderFormular {
   </div>
   <div class="row">
       <div class="col-12 mt-5">
-      <h5>Tidigare beställningar:</h5>
+      <h5>Tidigare beställningar: </h5>
       <div class="orderHistory col-12">
 
       </div>
