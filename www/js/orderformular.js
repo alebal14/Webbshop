@@ -45,13 +45,13 @@ class OrderFormular {
     // let orderData = JSON.parse(localStorage.getItem(`Orderformulär${orderId}`));
     // $('.orderHistory').append("<p><strong>Namn: </strong> " + orderData.name + "<strong> Email: </strong>" + orderData.email + "<strong> Adress: </strong>" + orderData['adress'] + "<strong> Meddelande: </strong>" + orderData['message'] + "<strong> Datum: </strong>" + orderData.dag + "-" + orderData.månad + "-" + orderData.år + "</p>");
     
-    
+    $('.orderHistory').empty();
     for (let i = 0; i < store.orderArray.length; i++) {
-      $('.orderHistory').append(`<p><strong>Namn: </strong> ${store.orderArray[i].name}
+      $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${store.orderArray[i].name}
        <strong> Email: </strong> ${store.orderArray[i].email} 
        <strong> Adress: </strong> ${store.orderArray[i].adress} 
        <strong> Meddelande: </strong>${store.orderArray[i].message}
-       <strong> Datum: </strong> ${store.orderArray[i].dag}-${store.orderArray[i].månad}-${store.orderArray[i].år}</p>`);
+       <strong> Datum: </strong> ${store.orderArray[i].dag}-${store.orderArray[i].månad}-${store.orderArray[i].år}</p></section>`);
     }
   }
 

@@ -277,3 +277,7 @@ ul li:nth-child(4).active ~ .slide {
         margin: 2px;
     }
 }
+.orderDisplay{
+    border-bottom: 1px solid black;
+    margin-top: 15px;
+}
