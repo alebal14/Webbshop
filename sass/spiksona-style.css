@@ -257,3 +257,23 @@ ul li:nth-child(4).active ~ .slide {
 #formrow{
     min-height: 50vh;
 }
+
+@media (max-width: 580px) 
+{
+    .kundkorgTop
+    {
+        display: none;
+        
+        
+    }
+}
+
+@media (max-width: 580px) 
+{
+    .test2
+    {
+        display: flex;
+        justify-content: center;
+        margin: 2px;
+    }
+}
