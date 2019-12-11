@@ -32,6 +32,7 @@ class App {
     // Load the products from JSON
     this.loadProducts();
     this.loadCart();
+    store.orderArray = store.orderArray || [];
   }
 
   changeRoute() {

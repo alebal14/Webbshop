@@ -27,21 +27,32 @@ class OrderFormular {
       orderData['år'] = y;
       console.log(orderData);
 
-      if (localStorage.getItem("Orderformulär1") === null) {
-        orderId = 1;
-      } else {
-        orderId += 1;
-      }
+      // if (localStorage.getItem("Orderformulär1") === null) {
+      //   orderId = 1;
+      // } else {
+      //   orderId += 1;
+      // }
 
-      localStorage.setItem(`Orderformulär${orderId}`, JSON.stringify(orderData));
+      // localStorage.setItem(`Orderformulär${orderId}`, JSON.stringify(orderData));
+      store.orderArray.push(orderData);
+      store.save();
       document.getElementById("my-form").reset();
-      this.fetchOrderData();
+      this.fetchOrderData(orderData);
     });
   }
 
-  fetchOrderData() {
-    let orderData = JSON.parse(localStorage.getItem(`Orderformulär${orderId}`));
-    $('.orderHistory').append("<p><strong>Namn: </strong> " + orderData['name'] + "<strong> Email: </strong>" + orderData['email'] + "<strong> Adress: </strong>" + orderData['adress'] + "<strong> Meddelande: </strong>" + orderData['message'] + "<strong> Datum: </strong>" + orderData['dag'] + "-" + orderData['månad'] + "-" + orderData['år'] + "</p>");
+  fetchOrderData(orderData) {
+    // let orderData = JSON.parse(localStorage.getItem(`Orderformulär${orderId}`));
+    // $('.orderHistory').append("<p><strong>Namn: </strong> " + orderData.name + "<strong> Email: </strong>" + orderData.email + "<strong> Adress: </strong>" + orderData['adress'] + "<strong> Meddelande: </strong>" + orderData['message'] + "<strong> Datum: </strong>" + orderData.dag + "-" + orderData.månad + "-" + orderData.år + "</p>");
+    
+    
+    for (let i = 0; i < store.orderArray.length; i++) {
+      $('.orderHistory').append(`<p><strong>Namn: </strong> ${store.orderArray[i].name}
+       <strong> Email: </strong> ${store.orderArray[i].email} 
+       <strong> Adress: </strong> ${store.orderArray[i].adress} 
+       <strong> Meddelande: </strong>${store.orderArray[i].message}
+       <strong> Datum: </strong> ${store.orderArray[i].dag}-${store.orderArray[i].månad}-${store.orderArray[i].år}</p>`);
+    }
   }
 
   render() {
