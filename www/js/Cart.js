@@ -69,25 +69,28 @@ class Cart {
   }
   
   allSum(){  
-    let total = 0;  
-    for(var i=0; i<this.myCart.length; i++){
-        total += this.myCart[i].price * this.myCart[i].unit;     
-    }  
-   
-    let numbertotal = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(total)        
-   return numbertotal 
+    let total = 0;
+      let cart = this.myCart;  
+      for (let item of cart) {
+        let rowSum = item.price * item.unit;
+        let [discountQuantity, _for] = item.discount || [];
+                  if (discountQuantity) {
+                  let numberOfDiscounts = Math.floor(item.unit / discountQuantity);
+                  let discountSum = numberOfDiscounts * item.price * (discountQuantity - _for);              
+                  rowSum -= discountSum;
+        }    
+        total += rowSum;    
+      }
+      
+    
+     return total
   }
   
   allMoms(){
-    let totalmoms = 0;
-    let total = 0;
-    for(var i=0; i<this.myCart.length; i++){
-      total += this.myCart[i].price * this.myCart[i].unit;   
-      }  
-      totalmoms = total * 0.25; 
- 
-      let numbertotalmoms = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(totalmoms)        
-     return numbertotalmoms     
+    let total = this.allSum();    
+    let  totalmoms = total * 0.25;  
+     
+    return totalmoms
   }
   
   allFrakt(){
@@ -98,28 +101,16 @@ class Cart {
      }  
      fraktTotal = frakt * 40;
         
-     let numberfrakt = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(fraktTotal)        
-     return numberfrakt    
+     return fraktTotal     
  }
  
  allTotal(){
-   let alltotal = 0;
-   let frakt = 0; 
-   let fraktTotal = 0; 
-   let total = 0;
-   
-   for(var i=0; i<this.myCart.length; i++){
-     frakt += this.myCart[i].vikt * this.myCart[i].unit;  
-     total += this.myCart[i].price * this.myCart[i].unit;  
-     }  
-     
-     fraktTotal = frakt * 40;  
-     
-     alltotal = fraktTotal + total;
- 
-     let numberalltotal = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(alltotal)        
-     return numberalltotal
-     
+  let allfrakt = this.allFrakt();
+  let allsum = this.allSum();
+
+  let alltotal = allfrakt + allsum;
+
+  return alltotal     
  }
  
  
@@ -157,8 +148,8 @@ renderOnDropdown(){
   
       ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
     <div class="test">
-      <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}</p>
-    <p class="totalsumma">Moms: ${this.allMoms()}</p>
+      <div class="col"><p class="totalsumma">Summa: ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allSum())}</p>
+    <p class="totalsumma">Moms: ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allMoms())}</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
     </div>
   `);}
@@ -217,21 +208,17 @@ render() {
     <div class="col-12 col-sm-12 col-md-12 col-lg-4">
     <div class="hej3 row">
     <div class="col-12">
-    <div class="float-right">Summa: <span>${this.allSum()}</span></div><br>
-     <div class="float-right">Moms: <span>${this.allMoms()}</span></div><br>
-     <div class="float-right">Frakt: <span>${this.allFrakt()}</span></div><br>
-     <div class="float-right">Totalt: <span>${this.allTotal()}</span></div><br>
+    <div class="float-right">Summa: <span>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allSum())}</span></div><br>
+     <div class="float-right">Moms: <span>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allMoms())}</span></div><br>
+     <div class="float-right">Frakt: <span>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allFrakt())}</span></div><br>
+     <div class="float-right">Totalt: ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allTotal())} <span></span></div><br>
     <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right"><i class="far fa-trash-alt"></i> Töm varukorg</button>
     <a type="button" id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right" href="#orderformular">Gå till kassan</a>
     </div>
   </div>
   </div>
   </div>
-</div>
-
-
-
-  `);
+</div>`);
     } 
     
     $('main').removeClass('startsida')

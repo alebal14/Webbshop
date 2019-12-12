@@ -7,8 +7,8 @@ class CartItem {
       this.unit = unit;  
       this.image = image;
       this.vikt = vikt;
-        this.discount = discount;        
-        this.loadCart();  
+      this.discount = discount;        
+      this.loadCart();  
         
         
 }
@@ -83,34 +83,27 @@ loadCart(){
           }); 
         }
        
-
-        priceFormat(){
-          let fprice = this.price;
-          let numberfprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(fprice)        
-          return numberfprice
-        }
-        
         prodTotal(){
           //summering av alla priser
+          
           let total = 0;
-
-          console.log(this.discount);
-
           let rowSum = this.price * this.unit;
             let [discountQuantity, _for] = this.discount || [];
-              if (discountQuantity) {
+              if (discountQuantity) {                
               let numberOfDiscounts = Math.floor(this.unit / discountQuantity);
-              let discountSum = numberOfDiscounts * this.price * (discountQuantity - _for);
-              console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
+              let discountSum = numberOfDiscounts * this.price * (discountQuantity - _for);               
               rowSum -= discountSum;
+              
             }
-
-            total += rowSum;
-           
-          let numbertotalprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(total)        
-          return numbertotalprice 
+            
+            total += rowSum;  
+            return total
+            
         }
      
+        text(){
+          console.log("hello");
+        }
 
    render(){
     return `
@@ -123,20 +116,21 @@ loadCart(){
     </div>
     <div class="test2 col-12 col-sm-2"><button id="negCartCounter-${this.id}">
     <i id="minus" class="fas fa-minus"></i></button>
- <span>${this.unit}</span>
- <button id="cartCounter-${this.id}">
- <i id="plus" class="fas fa-plus"></i></button> 
+    <span>${this.unit}</span>
+    <button id="cartCounter-${this.id}">
+    <i id="plus" class="fas fa-plus"></i></button> 
     </div>
     <div class="col-12 col-sm-2">
-    <li class="test2 list-inline-item"><p>${this.priceFormat()}<span>/st</span></p></li>
+    <li class="test2 list-inline-item"><p>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.price)}<span>/st</span></p></li>
     </div>
-    <div class="test2 col-12 col-sm-2">
-    <li class="list-inline-item"><p>${this.prodTotal()}<span></span></li>
+    <div class="test2 col-12 col-sm-2">    
+    <li class="list-inline-item tclass" ><p>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.prodTotal())}<span></span></li>    
     </div>
     <div class="test2 col-12 col-sm-1"><button id="deleteitem-${this.id}">
     <i class="fas fa-trash-alt"></i></button>
+    </div>     
     </div>
-    </div>
+    
   `  
 }
 
@@ -148,7 +142,7 @@ renderCartItemonDropdown(){
     <tr>
       <td id="bild1"><img class="img-fluid border border-primary" src="${this.image}"></td>
       <td id="cell">${this.name}</td>
-      <td id="cell">${this.priceFormat()}</td>
+      <td id="cell">${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.price)}</td>
       <td id="cell"> <span>${this.unit}
 </span> </td>
     </tr>
@@ -157,17 +151,7 @@ renderCartItemonDropdown(){
   `
 }
 }
-function popUpCall() {
-  let popup = document.getElementById("myPopup");
-  let executed = localStorage.getItem('executed');
-  
-if (executed) {
-  popup.classList.remove("show");
-} else {
-  popup.classList.toggle("show");
-  localStorage.setItem('executed', true);
-}
-}
+
 
 
  
