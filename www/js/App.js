@@ -30,8 +30,7 @@ class App {
     // Listen to hash changes - rerender...
     $(window).on('hashchange', () => this.changeRoute());
     // Load the products from JSON
-    this.loadProducts();
-    this.loadCart();
+    this.loadProducts();    
     store.orderArray = store.orderArray || [];
   }
 
@@ -69,18 +68,13 @@ class App {
     // Make a new product list with all of our products
     // and add it to our routes
     this.routes.produkter = new ProductList(this.products);
+    this.routes.varukorg = this.cart;   
     // Now we are ready to call changeRoute and display
     // the correct page on initial page load..
     this.changeRoute();
   }
 
-async loadCart(){  
-  var myCartItems = localStorage.getItem(this.myCart);  
-  console.log('Din varukorg:' + myCartItems);    
-  this.routes.varukorg = this.cart;    
-  this.changeRoute();
-}
-  
+
 }
 $('li').on('click', function hejhopp(){
   $(this).siblings().removeClass('active');

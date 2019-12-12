@@ -1,70 +1,107 @@
 class Cart {
+ 
+  constructor(){
+    
+    this.myCart = [];
+    this.addclearCartbtn();  
+    this.load();
+    this.renderOnDropdown();    
+    this.renderTotalUnit();
+    Cart.render =()=>this.render();    
+ }
+ 
+  load(){
+    
+    try{ 
+      let data = JSON.parse(localStorage.Cart);
+      for (let {id, name, image, price, unit} of data){
+        this.myCart.push(new CartItem(id, name, image, price, unit));      
+      }       
+    } catch(e){
+      
+    }      
+  }
 
- constructor(){
-   this.myCart = []; 
-   store.currentCartValue = 0;
-   this.clearCart(); 
+  addclearCartbtn(){
+   $('body').on('click', `#removeBtn`, e => {    
+     e.preventDefault();
+     this.clearCart();
+   });  
+ }
+ 
+ clearCart(){
+   localStorage.clear(); 
+   let newApp = new App();
+   return newApp   
+  }
+ 
+  add(cartItem) {
+   const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
+ 
+     if(existingProduct) {
+       this.increaseUnit(existingProduct);
+     }
+     else {
+       cartItem.unit = 1;
+       this.myCart.push(cartItem); 
+     }
+    this.saveCart();      
+    this.allSum();  
+    this.allMoms();   
+    this.renderOnDropdown();
+    this.TotalUnit();
+    this.renderTotalUnit();
+ }
+ 
+ 
+ 
+ increaseUnit(existingProduct){
+   existingProduct.unit++;
+   this.myCart.splice(
+     this.myCart.findIndex(product => product.id === existingProduct.id),
+     existingProduct
+   );
+ }
+ 
+ 
+ saveCart(){
+ localStorage.setItem('Cart',JSON.stringify(this.myCart));
+ }
+ 
+ allSum(){  
+   let total = 0;  
+   for(var i=0; i<this.myCart.length; i++){
+       total += this.myCart[i].price * this.myCart[i].unit;     
+   }  
+     
+   let numbertotal = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(total)        
+  return numbertotal 
+ }
+ 
+ allMoms(){
+   let totalmoms = 0;
+   let total = 0;
+   for(var i=0; i<this.myCart.length; i++){
+     total += this.myCart[i].price * this.myCart[i].unit;   
+     }  
+     totalmoms = total * 0.25; 
+
+     let numbertotalmoms = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(totalmoms)        
+    return numbertotalmoms     
+ }
+ 
+ TotalUnit(){
+     let totalunit = 0;
+     for(var i=0; i<this.myCart.length; i++){
+       totalunit += this.myCart[i].unit;   
+       }  
+
+      
+      return totalunit;
  }
 
-
- clearCart(){
-  $('body').on('click', `#removeBtn`, e => {    
-    e.preventDefault();
-    localStorage.clear();    
-    new App();
-  });  
-}
-
- add(cartItem) {
-  const existingProduct = this.myCart.length && this.myCart[this.myCart.findIndex(product => product.id === cartItem.id)];
-
-    if(existingProduct) {
-      this.increaseUnit(existingProduct);
-    }
-    else {
-      cartItem.unit = 1;
-      this.myCart.push(cartItem); 
-    }
-   this.saveCart(); 
-   cartCounter();   
-   this.allSum();  
-   this.allMoms();   
-   this.renderOnDropdown();
-  //  this.pass();
-}
-
-increaseUnit(existingProduct)
-{
-  existingProduct.unit++;
-  this.myCart.splice(
-    this.myCart.findIndex(product => product.id === existingProduct.id),
-    existingProduct
-  );
-}
-
-
-saveCart(){
-localStorage.setItem('Cart',JSON.stringify(this.myCart));
-localStorage.setItem('currentCartValue', store.currentCartValue);
-}
-
-allSum(){
-  //summering av alla priser
-  let total = 0;  
-  for(var i=0; i<this.myCart.length; i++){
-      total += this.myCart[i].price * this.myCart[i].unit;     
-  }  
-  return total  
-}
-
-allMoms(){
-  let totalmoms = 0;
-  let total = 0;
-  for(var i=0; i<this.myCart.length; i++){
-    total += this.myCart[i].price * this.myCart[i].unit;   
-    }  
-    totalmoms = total * 0.25; 
-    return totalmoms
+ renderTotalUnit(){
+  document.getElementById('cartValue').innerHTML = this.TotalUnit();
 }
 
 renderOnDropdown(){
@@ -164,22 +201,3 @@ render() {
 }
 }
 
-function clearCart(){
-  localStorage.clear();
-  alert('Local storage rensat lol');
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue = 0);
-}
-function cartCounter(){
-  store.currentCartValue++
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
-}
-function negCartCounter(){
-  if (store.currentCartValue > 0){
-  store.currentCartValue--
-  document.getElementById('cartValue').innerHTML = (store.currentCartValue);
-}
-else{
-  store.currentCartValue = 0;
-  alert('Inga varor i varukorgen!');
-}
-}
