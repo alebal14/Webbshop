@@ -281,3 +281,8 @@ ul li:nth-child(4).active ~ .slide {
     border-bottom: 1px solid black;
     margin-top: 15px;
 }
+
+.tom{
+    display: flex;
+    justify-content: center;
+}

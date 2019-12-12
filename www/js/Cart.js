@@ -166,13 +166,13 @@ render() {
     if(this.myCart.length === 0){
       $('main').html(`
     <section class="row">
-      <div class="col">
+      <div class="tom col pt-3">
         <h1>Varukorgen</h1>
       </div>
     </section>    
     <section class="row">
-    <section class="col">
-      <h1>Tomt</h1>
+    <section class="tom col pt-3">
+      <p>Här var det tomt.</p>
     </section>
     </section>
   `);
