@@ -12,7 +12,9 @@ class OrderFormular {
 
   submitButtonListener() {
     $('body').on('submit', '#my-form', e => {
-      e.preventDefault()
+      e.preventDefault()    
+      let mydata = JSON.parse(localStorage.Cart);        
+     
       let day = new Date();
       let d = day.getDate();
       let month = new Date();
@@ -26,9 +28,10 @@ class OrderFormular {
       orderData['message'] = $('#message').val()
       orderData['day'] = d;
       orderData['month'] = (m + 1);
-      orderData['year'] = y;
-      console.log(orderData);
+      orderData['year'] = y;   
+      orderData['product'] = mydata;            
       store.orderArray.push(orderData);
+      store.orderArray.order = store.orderArray.concat(mydata);
       store.save();
       document.getElementById("my-form").reset();
       this.fetchOrderData();
@@ -36,7 +39,7 @@ class OrderFormular {
   }
 
   fetchOrderData() {
-    console.log(this.reverse);
+    
     $('.orderHistory').empty();
     let toList = [...store.orderArray];
     this.reverse && toList.reverse();
@@ -45,8 +48,8 @@ class OrderFormular {
       $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${order.name}
        <strong> Email: </strong> ${order.email} 
        <strong> Adress: </strong> ${order.adress} 
-       <strong> Meddelande: </strong>${order.message}
-       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}</p></section>`);
+       <strong> Meddelande: </strong>${order.message}             
+       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}</p></section>`);       
     }
   }
 
