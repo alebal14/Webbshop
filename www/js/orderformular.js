@@ -2,19 +2,17 @@ let orderId = 0;
 class OrderFormular {
 
   constructor() {
-    // OrderFormular.orderId = 0;
+    // OrderFormular.orderId = 0    
     this.submitButtonListener();
-    $('body').on('click', '.sortOrder', () => {
-      this.reverse = !this.reverse;
-      this.fetchOrderData()
-    });
+    this.sortBtn();
   }
 
-  submitButtonListener() {
+
+  submitButtonListener(a, b, c, d) {
     $('body').on('submit', '#my-form', e => {
       e.preventDefault()    
-      let mydata = JSON.parse(localStorage.Cart);      
-     
+      console.log(a);
+      let mydata = JSON.parse(localStorage.Cart);  
       let day = new Date();
       let d = day.getDate();
       let month = new Date();
@@ -32,9 +30,16 @@ class OrderFormular {
       orderData['product'] = mydata;            
       store.orderArray.push(orderData);            
       store.save();
-      localStorage.removeItem('Cart');       
+      localStorage.removeItem('Cart');
       document.getElementById("my-form").reset();
       this.fetchOrderData();
+    });
+  }
+
+  sortBtn(){
+    $('body').on('click', '.sortOrder', () => {
+      this.reverse = !this.reverse;
+      this.fetchOrderData()
     });
   }
 
@@ -42,7 +47,6 @@ class OrderFormular {
     
     $('.orderHistory').empty();
     let toList = [...store.orderArray];
-    
     
     this.reverse && toList.reverse();
     $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
@@ -54,9 +58,7 @@ class OrderFormular {
        <strong> Beställning: </strong>${order.product[name]}                   
        <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}       
        </p></section>`);          
-      }
-      
-       
+      } 
   }
 
 

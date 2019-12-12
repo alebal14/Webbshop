@@ -4,6 +4,7 @@ class Cart {
   
     this.myCart = [];       
     this.load();
+    this.orderbtn();
      this.addclearCartbtn();  
     this.renderOnDropdown();    
     this.renderTotalUnit();
@@ -127,6 +128,25 @@ class Cart {
     document.getElementById('cartValue').innerHTML = this.TotalUnit();
   }
 
+  orderbtn(){
+    $('body').on('click', `#orderBtn`, e => {
+        
+
+      let a = this.allFrakt();
+      let b = this.allMoms();
+      let c = this.allSum();
+      let d = this.allTotal();
+      let cartinfo = {};
+      cartinfo['frakt'] = a;
+      cartinfo['moms'] = b;
+      cartinfo['summa'] = c;
+      cartinfo['total'] = d;
+      this.myCart.push(cartinfo); 
+      this.saveCart();
+      
+    });
+  }
+
 renderOnDropdown(){
   if(this.myCart.length === 0){
 
@@ -213,7 +233,7 @@ render() {
      <div class="float-right">Frakt: <span>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allFrakt())}</span></div><br>
      <div class="float-right">Totalt: ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.allTotal())} <span></span></div><br>
     <button id="removeBtn" class="btn btn-warning my-2 rounded-0 float-right"><i class="far fa-trash-alt"></i> Töm varukorg</button>
-    <a type="button" id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right" href="#orderformular">Gå till kassan</a>
+    <a type="button" id="orderBtn" class="btn btn-warning my-2 mr-3 rounded-0 float-right" href="#orderformular" >Gå till kassan</a>
     </div>
   </div>
   </div>

@@ -92,7 +92,7 @@ loadCart(){
               if (discountQuantity) {                
               let numberOfDiscounts = Math.floor(this.unit / discountQuantity);
               let discountSum = numberOfDiscounts * this.price * (discountQuantity - _for);               
-              rowSum -= discountSum;
+              rowSum -= discountSum;             
               
             }
             
@@ -101,9 +101,7 @@ loadCart(){
             
         }
      
-        text(){
-          console.log("hello");
-        }
+       
 
    render(){
     return `
