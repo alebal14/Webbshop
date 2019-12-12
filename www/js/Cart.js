@@ -1,26 +1,24 @@
 class Cart {
  
   constructor(){
-    
-    this.myCart = [];
-    this.addclearCartbtn();  
+  
+    this.myCart = [];       
     this.load();
+     this.addclearCartbtn();  
     this.renderOnDropdown();    
     this.renderTotalUnit();
-    Cart.render =()=>this.render();    
- }
- 
-  load(){
-    
-    try{ 
-      let data = JSON.parse(localStorage.Cart);
-      for (let {id, name, image, price, unit} of data){
-        this.myCart.push(new CartItem(id, name, image, price, unit, vikt, discount));      
-      }       
-    } catch(e){
-      
-    }      
+    Cart.render =()=>this.render();   
   }
+  
+   load(){    
+     try{ 
+       let data = JSON.parse(localStorage.Cart);
+       for (let {id, name, image, price, unit, vikt, discount} of data){
+         this.myCart.push(new CartItem(id, name, image, price, unit, vikt, discount));      
+       }       
+     } catch(e){      
+     }      
+   }
 
   addclearCartbtn(){
    $('body').on('click', `#removeBtn`, e => {    

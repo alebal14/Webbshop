@@ -94,8 +94,6 @@ loadCart(){
           //summering av alla priser
           let totalprice = 0;  
           totalprice = this.unit * this.price; 
-
-          
           let numbertotalprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(totalprice)        
           return numbertotalprice 
         }
