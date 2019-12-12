@@ -60,7 +60,7 @@ loadCart(){
             const item = this;
             item.unit++
                         
-            
+            Cart.render();
 
             //mydata.push(item);
             //localStorage.setItem('Cart',JSON.stringify(mydata));  
@@ -115,10 +115,10 @@ loadCart(){
  <i id="plus" class="fas fa-plus"></i></button> 
     </div>
     <div class="col-12 col-sm-2">
-    <li class="test2 list-inline-item"><p>${this.priceFormat()}<span>:-/st</span></p></li>
+    <li class="test2 list-inline-item"><p>${this.priceFormat()}<span>/st</span></p></li>
     </div>
     <div class="test2 col-12 col-sm-2">
-    <li class="list-inline-item"><p>Totalt: ${this.prodTotal()}<span>:-</span></li>
+    <li class="list-inline-item"><p>Totalt:${this.prodTotal()}<span></span></li>
     </div>
     <div class="test2 col-12 col-sm-1"><button id="deleteitem-${this.id}">
     <i class="fas fa-trash-alt"></i></button>
@@ -135,11 +135,8 @@ renderCartItemonDropdown(){
     <tr>
       <td id="bild1"><img class="img-fluid border border-primary" src="${this.image}"></td>
       <td id="cell">${this.name}</td>
-      <td id="cell">${this.priceFormat()}:-</td>
-      <td id="cell"><span onclick="negCartCounter()">
-      <i id="minus" class="fas fa-minus"></i>
- </span>${this.unit}<span onclick="cartCounter()">
- <i id="plus" class="fas fa-plus"></i>
+      <td id="cell">${this.priceFormat()}</td>
+      <td id="cell"> <span>${this.unit}
 </span> </td>
     </tr>
   </table>

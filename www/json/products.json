@@ -16,6 +16,7 @@
     "price": 149,
     "image": "/images/5-56.jpg",
     "description": "5-55, bra till allt.",
+    "discount": [5, 3],
     "vikt": 0.5
   },
   {

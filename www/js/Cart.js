@@ -154,8 +154,8 @@ renderOnDropdown(){
   
       ${this.myCart.map(item => item.renderCartItemonDropdown()).join('')}
     <div class="test">
-      <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}:-</p>
-    <p class="totalsumma">Moms: ${this.allMoms()}:-</p>
+      <div class="col"><p class="totalsumma">Total Summa: ${this.allSum()}</p>
+    <p class="totalsumma">Moms: ${this.allMoms()}</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
     </div>
   `);
