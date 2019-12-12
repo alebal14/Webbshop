@@ -92,9 +92,22 @@ loadCart(){
         
         prodTotal(){
           //summering av alla priser
-          let totalprice = 0;  
-          totalprice = this.unit * this.price; 
-          let numbertotalprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(totalprice)        
+          let total = 0;
+
+          console.log(this.discount);
+
+          let rowSum = this.price * this.unit;
+            let [discountQuantity, _for] = this.discount || [];
+              if (discountQuantity) {
+              let numberOfDiscounts = Math.floor(this.unit / discountQuantity);
+              let discountSum = numberOfDiscounts * this.price * (discountQuantity - _for);
+              console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
+              rowSum -= discountSum;
+            }
+
+            total += rowSum;
+           
+          let numbertotalprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(total)        
           return numbertotalprice 
         }
      
@@ -118,7 +131,7 @@ loadCart(){
     <li class="test2 list-inline-item"><p>${this.priceFormat()}<span>/st</span></p></li>
     </div>
     <div class="test2 col-12 col-sm-2">
-    <li class="list-inline-item"><p>Totalt:${this.prodTotal()}<span></span></li>
+    <li class="list-inline-item"><p>${this.prodTotal()}<span></span></li>
     </div>
     <div class="test2 col-12 col-sm-1"><button id="deleteitem-${this.id}">
     <i class="fas fa-trash-alt"></i></button>

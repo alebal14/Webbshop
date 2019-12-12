@@ -13,7 +13,7 @@ class OrderFormular {
   submitButtonListener() {
     $('body').on('submit', '#my-form', e => {
       e.preventDefault()    
-      let mydata = JSON.parse(localStorage.Cart);        
+      let mydata = JSON.parse(localStorage.Cart);      
      
       let day = new Date();
       let d = day.getDate();
@@ -30,8 +30,9 @@ class OrderFormular {
       orderData['month'] = (m + 1);
       orderData['year'] = y;   
       orderData['product'] = mydata;            
-      store.orderArray.push(orderData);      
+      store.orderArray.push(orderData);            
       store.save();
+      localStorage.removeItem('Cart');       
       document.getElementById("my-form").reset();
       this.fetchOrderData();
     });

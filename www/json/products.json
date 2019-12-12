@@ -6,7 +6,7 @@
     "price": 39,
     "image": "/images/kaffe.jpg",
     "description": "VIKTIGT!",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 1
   },
   {
@@ -16,7 +16,7 @@
     "price": 149,
     "image": "/images/5-56.jpg",
     "description": "5-55, bra till allt.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.5
   },
   {
@@ -26,7 +26,7 @@
     "price": 229,
     "image": "/images/vattenpass.jpg",
     "description": "Ett vattenpass",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 1
   },
 
@@ -37,7 +37,7 @@
     "price": 499,
     "image": "/images/fluke.jpg",
     "description": "En bra multimeter!",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.5
   },
 
@@ -48,7 +48,7 @@
     "price": 150,
     "image": "/images/hyvel.jpg",
     "description": "Obs, ej lämpad för ost.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 2
   },
 
@@ -59,7 +59,7 @@
     "price": 1299,
     "image": "/images/cirkelsag.jpg",
     "description": "När det ska sågas snabbt.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 5
   },
 
@@ -70,7 +70,7 @@
     "price": 99,
     "image": "/images/skjutmatt.jpg",
     "description": "Pang pang",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.3
 
   },
@@ -82,7 +82,7 @@
     "price": 119,
     "image": "/images/skyddsglasogon.jpg",
     "description": "Skyddsbrillor plzzz",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.2
   },
 
@@ -93,7 +93,7 @@
     "price": 8,
     "image": "/images/mutter.jpg",
     "description": "Mutter för dig som är butter",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.7
   },
 
@@ -104,7 +104,7 @@
     "price": 999,
     "image": "/images/borrmaskin.jpg",
     "description": "Borrrrrrr.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 7
   },
 
@@ -115,7 +115,7 @@
     "price": 5,
     "image": "/images/plugg.jpg",
     "description": "Glöm inte plugga inför tentan!",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.3
   },
 
@@ -126,7 +126,7 @@
     "price": 79,
     "image": "/images/skruvmejsel.jpg",
     "description": "En skruvmejsel av lägsta kvalité.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 0.5
   },
 
@@ -137,7 +137,7 @@
     "price": 129,
     "image": "/images/skiftnyckel.jpg",
     "description": "En ph-neutral skiftnyckel, milt parfymerad med citrusdoft.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 1
   },
 
@@ -148,7 +148,7 @@
     "price": 129,
     "image": "/images/hammare.jpg",
     "description": "En fin hammare att spika med",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 1
   },
 
@@ -159,7 +159,7 @@
     "price": 3,
     "image": "/images/spik.jpg",
     "description": "En låda med en massa spik.",
-    "discount": [5, 3],
+    "discount": ["3", "2"],
     "vikt": 4
   }
 ]

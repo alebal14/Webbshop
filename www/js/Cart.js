@@ -137,6 +137,9 @@ class Cart {
   }
 
 renderOnDropdown(){
+  if(this.myCart.length === 0){
+
+  } else {
   //render varukorg på dropdown i nav
   $('#cartdropdown').html(` 
   <div class="col">  
@@ -158,7 +161,7 @@ renderOnDropdown(){
     <p class="totalsumma">Moms: ${this.allMoms()}</p>
     <a type="button" class="btn btn-warning" href="#varukorg">Gå till kundkorgen</a></div>
     </div>
-  `);
+  `);}
 }
 
 render() {
