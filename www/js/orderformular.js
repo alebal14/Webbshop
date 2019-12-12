@@ -30,8 +30,7 @@ class OrderFormular {
       orderData['month'] = (m + 1);
       orderData['year'] = y;   
       orderData['product'] = mydata;            
-      store.orderArray.push(orderData);
-      store.orderArray.order = store.orderArray.concat(mydata);
+      store.orderArray.push(orderData);      
       store.save();
       document.getElementById("my-form").reset();
       this.fetchOrderData();
@@ -42,16 +41,24 @@ class OrderFormular {
     
     $('.orderHistory').empty();
     let toList = [...store.orderArray];
+    
+    
     this.reverse && toList.reverse();
     $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
     for (let order of toList) {
       $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${order.name}
        <strong> Email: </strong> ${order.email} 
        <strong> Adress: </strong> ${order.adress} 
-       <strong> Meddelande: </strong>${order.message}             
-       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}</p></section>`);       
-    }
+       <strong> Meddelande: </strong>${order.message} 
+       <strong> Beställning: </strong>${order.product[name]}                   
+       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}       
+       </p></section>`);          
+      }
+      
+       
   }
+
+
 
   render() {
     $('#link5').addClass('active')
