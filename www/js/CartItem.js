@@ -1,11 +1,13 @@
 class CartItem {
 
-    constructor(id, name, image, price, unit){       
-        this.id = id;
-        this.name = name;        
-        this.price = price;
-        this.unit = unit;  
-        this.image = image;
+    constructor(id, name, image, price, unit, vikt, discount){       
+      this.id = id;
+      this.name = name;        
+      this.price = price;
+      this.unit = unit;  
+      this.image = image;
+      this.vikt = vikt;
+        this.discount = discount;        
         this.loadCart();  
         
         
@@ -88,12 +90,12 @@ loadCart(){
           return numberfprice
         }
         
-      
-    
         prodTotal(){
           //summering av alla priser
           let totalprice = 0;  
           totalprice = this.unit * this.price; 
+
+          
           let numbertotalprice = new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(totalprice)        
           return numbertotalprice 
         }

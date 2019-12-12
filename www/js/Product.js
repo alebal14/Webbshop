@@ -11,7 +11,7 @@ class Product {
     $('body').on('click', `#buy-button-${this.id}`, e => {
       e.preventDefault();
       
-      this.cart.add(new CartItem(this.id, this.name, this.image, this.price)); 
+      this.cart.add(new CartItem(this.id, this.name, this.image, this.price, this.unit, this.vikt));  
 
       let cartPos = $(".cartIcon").offset()
       let image =  $(`.displayImage-${this.id}`);
