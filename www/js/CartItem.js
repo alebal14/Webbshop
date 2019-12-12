@@ -7,7 +7,7 @@ class CartItem {
         this.unit = unit;  
         this.image = image;
         this.loadCart();  
-        this.deleteItem();  
+        
         
 }
     
@@ -16,7 +16,8 @@ loadCart(){
   try{ 
     let mydata = JSON.parse(localStorage.getItem('Cart'));
   this.negCartCounter(mydata);
-  this.cartCounter(mydata);       
+  this.cartCounter(mydata); 
+  this.deleteItem(mydata);        
           
   } catch(e){
     
@@ -56,8 +57,8 @@ loadCart(){
                      
             const item = this;
             item.unit++
+                        
             
-            Cart.render();
 
             //mydata.push(item);
             //localStorage.setItem('Cart',JSON.stringify(mydata));  
@@ -65,12 +66,17 @@ loadCart(){
           });  
         }
 
-        deleteItem(){
+        deleteItem(mydata){
           $('body').on('click', `#deleteitem-${this.id}`, e => { 
             e.preventDefault();
-
-            localStorage.removeItem('Cart');
             
+            let delitem = mydata.findIndex(item => item.id === this.id);
+            mydata.splice(delitem, 1);
+            
+            localStorage.setItem('Cart', JSON.stringify(mydata));
+
+            let newApp = new App();
+            return newApp  
 
           }); 
         }
@@ -82,9 +88,7 @@ loadCart(){
           return numberfprice
         }
         
-        clearCartitem(){        
-          localStorage.removeItem('cartItem');
-        }
+      
     
         prodTotal(){
           //summering av alla priser
