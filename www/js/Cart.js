@@ -65,8 +65,10 @@ class Cart {
  }
  
  
- saveCart(){
-  localStorage.setItem('Cart',JSON.stringify(this.myCart));
+ saveCart(cartInfo){
+    store.cartInfo = cartInfo;
+    store.save();
+    localStorage.setItem('Cart',JSON.stringify(this.myCart));
   }
   
   allSum(){  
@@ -141,8 +143,7 @@ class Cart {
       cartinfo['moms'] = b;
       cartinfo['summa'] = c;
       cartinfo['total'] = d;
-      this.myCart.push(cartinfo); 
-      this.saveCart();
+      this.saveCart(cartinfo);
       
     });
   }

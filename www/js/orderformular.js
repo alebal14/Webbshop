@@ -28,11 +28,13 @@ class OrderFormular {
       orderData['day'] = d;
       orderData['month'] = (m + 1);
       orderData['year'] = y;   
-      orderData['product'] = mydata;            
+      orderData['product'] = mydata;
+      Object.assign(orderData, store.cartInfo);
+      console.log(orderData)
       store.orderArray.push(orderData);            
       store.save();
       localStorage.removeItem('Cart');
-      document.getElementById("my-form").reset();
+      $("#my-form").trigger('reset');
       this.fetchOrderData();
     });
   }
