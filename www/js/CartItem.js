@@ -8,8 +8,10 @@ class CartItem {
       this.image = image;
       this.vikt = vikt;
       this.discount = discount;        
-      this.loadCart();  
-        
+      this.loadCart();    
+      this.cartCounter(); 
+      this.negCartCounter();
+      this.deleteItem();
         
 }
     
@@ -17,9 +19,7 @@ loadCart(){
 
   try{ 
     let mydata = JSON.parse(localStorage.getItem('Cart'));
-  this.negCartCounter(mydata);
-  this.cartCounter(mydata); 
-  this.deleteItem(mydata);        
+   return mydata       
           
   } catch(e){
     
@@ -28,50 +28,54 @@ loadCart(){
 }
 
 
-    negCartCounter(mydata){
+    negCartCounter(){
       $('body').on('click', `#negCartCounter-${this.id}`, e => { 
           e.preventDefault();
-                  
+          const mydata = this.loadCart();       
           const item = this;
-          item.unit--
+          const existingProduct = mydata.length && mydata.filter(product => product.id === item.id)[0];
+          
+          existingProduct.unit--
+          
+         mydata.splice(
+            mydata.filter(product => product.id === item.id)[0],
+            existingProduct);
 
-          if(this.unit > 0){
+          /*if(this.unit > 0){
             mydata.splice(
               mydata.findIndex(item => item.id === this.id),
               item);  
                        
           } else {
              localStorage.removeItem('Cart'); 
-          }
-          
+          }*/
+          mydata.push(item);
           localStorage.setItem('Cart', JSON.stringify(mydata));
-          Cart.render();
+          Cart.render();        
           
-          //mydata.push(item);
-          //localStorage.setItem('Cart',JSON.stringify(mydata)); 
+          
           
         });  
       }
 
-      cartCounter(mydata){
+      cartCounter(){
         $('body').on('click', `#cartCounter-${this.id}`, e => { 
             e.preventDefault();             
-                     
+            const mydata = this.loadCart();
             const item = this;
             item.unit++
-                        
-            Cart.render();
-
-            //mydata.push(item);
-            //localStorage.setItem('Cart',JSON.stringify(mydata));  
+            mydata.push(item);       
+            localStorage.setItem('Cart',JSON.stringify(mydata));      
+            Cart.render();            
+            
                          
           });  
         }
 
-        deleteItem(mydata){
+        deleteItem(){
           $('body').on('click', `#deleteitem-${this.id}`, e => { 
             e.preventDefault();
-            
+            const mydata = this.loadCart();
             let delitem = mydata.findIndex(item => item.id === this.id);
             mydata.splice(delitem, 1);
             
