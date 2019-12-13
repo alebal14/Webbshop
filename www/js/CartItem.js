@@ -7,83 +7,36 @@ class CartItem {
       this.unit = unit;  
       this.image = image;
       this.vikt = vikt;
-      this.discount = discount;        
-      this.loadCart();    
+      this.discount = discount;          
       this.cartCounter(); 
       this.negCartCounter();
       this.deleteItem();
         
 }
     
-loadCart(){
-
-  try{ 
-    let mydata = JSON.parse(localStorage.getItem('Cart'));
-   return mydata       
-          
-  } catch(e){
-    
-  } 
-   
-}
 
 
     negCartCounter(){
       $('body').on('click', `#negCartCounter-${this.id}`, e => { 
-          e.preventDefault();
-          const mydata = this.loadCart();       
-          const item = this;
-          const existingProduct = mydata.length && mydata.filter(product => product.id === item.id)[0];
-          
-          existingProduct.unit--
-          
-         mydata.splice(
-            mydata.filter(product => product.id === item.id)[0],
-            existingProduct);
-
-          /*if(this.unit > 0){
-            mydata.splice(
-              mydata.findIndex(item => item.id === this.id),
-              item);  
-                       
-          } else {
-             localStorage.removeItem('Cart'); 
-          }*/
-          mydata.push(item);
-          localStorage.setItem('Cart', JSON.stringify(mydata));
-          Cart.render();        
-          
-          
-          
+          this.unit--;
+          this.unit < 1 &&  $(`#deleteitem-${this.id}`).click();
+          Cart.currentCart.update();          
         });  
       }
 
       cartCounter(){
         $('body').on('click', `#cartCounter-${this.id}`, e => { 
-            e.preventDefault();             
-            const mydata = this.loadCart();
-            const item = this;
-            item.unit++
-            mydata.push(item);       
-            localStorage.setItem('Cart',JSON.stringify(mydata));      
-            Cart.render();            
-            
-                         
+            this.unit++     
+            Cart.currentCart.update();                          
           });  
         }
 
         deleteItem(){
           $('body').on('click', `#deleteitem-${this.id}`, e => { 
-            e.preventDefault();
-            const mydata = this.loadCart();
+            let mydata = Cart.currentCart.myCart
             let delitem = mydata.findIndex(item => item.id === this.id);
             mydata.splice(delitem, 1);
-            
-            localStorage.setItem('Cart', JSON.stringify(mydata));
-
-            let newApp = new App();
-            return newApp  
-
+            Cart.currentCart.update();
           }); 
         }
        
