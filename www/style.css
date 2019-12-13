@@ -9627,6 +9627,9 @@ h4 {
     left: 110px;
     top: 315px;
   }
+  .dropleft {
+    display: none;
+  }
 }
 
 .cartIcon {
