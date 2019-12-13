@@ -76,7 +76,10 @@ class App {
 
 
 }
-$('li').on('click', function hejhopp(){
+$('li').on('click', function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
 })
+$('.navbar-nav>li>a').on('click', function(){
+  $('.navbar-collapse').collapse('hide');
+});
