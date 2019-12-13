@@ -81,7 +81,8 @@ $('li').on('click', function(){
   $(this).addClass('active');
 })
 $('.navbar-nav>li>a').on('click', () => {
+  if (matchMedia('only screen and (max-width: 992px)').matches) {
   setTimeout(() =>  $('.navbar-collapse').collapse('hide'), 600);
   setTimeout(() =>  $('.slide').hide(), 600);
-  $('.slide').show();
+  $('.slide').show(); }
 });
