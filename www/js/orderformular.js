@@ -1,8 +1,7 @@
-let orderId = 0;
 class OrderFormular {
 
   constructor() {
-    // OrderFormular.orderId = 0    
+    // OrderFormular.orderId = 0  
     this.submitButtonListener();
     this.sortBtn();
   }
@@ -12,7 +11,9 @@ class OrderFormular {
     $('body').on('submit', '#my-form', e => {
       e.preventDefault()    
       console.log(a);
-      let mydata = JSON.parse(localStorage.Cart);  
+      let mydata;
+      try {mydata = JSON.parse(localStorage.Cart); }
+      catch(e){mydata = {}};  
       let day = new Date();
       let d = day.getDate();
       let month = new Date();
@@ -47,7 +48,6 @@ class OrderFormular {
     
     $('.orderHistory').empty();
     let toList = [...store.orderArray];
-    
     this.reverse && toList.reverse();
     $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
     for (let order of toList) {
@@ -55,8 +55,11 @@ class OrderFormular {
        <strong> Email: </strong> ${order.email} 
        <strong> Adress: </strong> ${order.adress} 
        <strong> Meddelande: </strong>${order.message} 
-       <strong> Beställning: </strong>${order.product[name]}                   
-       <strong> Datum: </strong> ${order.day}-${order.month}-${order.year}       
+       <strong> Beställning: </strong> ${order.product.map(product => `
+       ${product.name}
+     `)}        
+       <br><strong> Datum: </strong> ${order.day}-${order.month}-${order.year}    
+       
        </p></section>`);          
       } 
   }
@@ -99,5 +102,6 @@ class OrderFormular {
   </div> 
 </div>
         `);
+        this.fetchOrderData();
   }
 }
