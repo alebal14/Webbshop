@@ -89,7 +89,9 @@ loadCart(){
           let total = 0;
           let rowSum = this.price * this.unit;
             let [discountQuantity, _for] = this.discount || [];
-              if (discountQuantity) {                
+              if (discountQuantity) {  
+                let tclass =  $(`.tclass-${this.id}`); 
+                     
               let numberOfDiscounts = Math.floor(this.unit / discountQuantity);
               let discountSum = numberOfDiscounts * this.price * (discountQuantity - _for);               
               rowSum -= discountSum;             
@@ -122,7 +124,7 @@ loadCart(){
     <li class="test2 list-inline-item"><p>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.price)}<span>/st</span></p></li>
     </div>
     <div class="test2 col-12 col-sm-2">    
-    <li class="list-inline-item tclass" ><p>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.prodTotal())}<span></span></li>    
+    <li class="list-inline-item tclass-${this.id}" style="background-color: white;"><p>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(this.prodTotal())}<span></span></li>    
     </div>
     <div class="test2 col-12 col-sm-1"><button id="deleteitem-${this.id}">
     <i class="fas fa-trash-alt"></i></button>
