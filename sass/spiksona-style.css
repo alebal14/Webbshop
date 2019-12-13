@@ -96,7 +96,6 @@ ul li:nth-child(4).active ~ .slide {
         text-align: center;
     }
     .slide{
-        display: none;
         position: absolute;
         background-color: #fff;
         height: 10px;

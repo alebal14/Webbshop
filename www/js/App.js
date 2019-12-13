@@ -80,6 +80,8 @@ $('li').on('click', function(){
   $(this).siblings().removeClass('active');
   $(this).addClass('active');
 })
-$('.navbar-nav>li>a').on('click', function(){
-  $('.navbar-collapse').collapse('hide');
+$('.navbar-nav>li>a').on('click', () => {
+  setTimeout(() =>  $('.navbar-collapse').collapse('hide'), 600);
+  setTimeout(() =>  $('.slide').hide(), 600);
+  $('.slide').show();
 });

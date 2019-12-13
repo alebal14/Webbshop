@@ -9601,7 +9601,6 @@ h4 {
     text-align: center;
   }
   .slide {
-    display: none;
     position: absolute;
     background-color: #fff;
     height: 10px;
