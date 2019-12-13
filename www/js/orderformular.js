@@ -58,9 +58,16 @@ class OrderFormular {
        <strong> Adress: </strong> ${order.adress} 
        <strong> Meddelande: </strong>${order.message} 
        <strong> Beställning: </strong> ${order.product.map(product => `
-       ${product.name}
-     `)}        
-       <br><strong> Datum: </strong> ${order.day}-${order.month}-${order.year}    
+       <strong> Vara: </strong> ${product.name};
+       <strong> Pris: </strong> ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(product.price)};
+       <strong> Antal: </strong>${product.unit}
+       `)}   
+       <br>     
+       <strong> Summa: </strong>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(order.summa)}
+       <strong> Moms: </strong>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(order.moms)} 
+       <strong> Frakt: </strong>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(order.frakt)} 
+       <strong> Totalt: </strong>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(order.total)}  
+       <br><strong> Datum: </strong> ${order.day}-${order.month}-${order.year} ,   
        
        </p></section>`);          
       } 
