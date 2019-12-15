@@ -52,7 +52,13 @@ class OrderFormular {
     let toList = [...store.orderArray];
     this.reverse && toList.reverse();
     $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
+  
     for (let order of toList) {
+
+      // Find where you push an empty object into product
+      // AND product is a bad name for a list of products...
+      if(order.product.constructor !== Array){order.product = []}
+
       $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${order.name}
        <strong> Email: </strong> ${order.email} 
        <strong> Adress: </strong> ${order.adress} 

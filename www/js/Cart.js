@@ -200,6 +200,8 @@ class Cart {
     } else {
       $('main').html(`
       <div class="container">
+      <h1>Varukorgen</h1>
+      <p>Köper du 3 exemplar av samma vara så bjuder Spiksona på den 3e. Alltid! Bra va?</p>
   <div class="row pt-3">
     <div class="col-12 col-sm-12 col-md-12 col-lg-8">
     <div class="row">
