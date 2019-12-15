@@ -1,7 +1,6 @@
 class Cart {
 
   constructor() {
-
     this.myCart = [];
     this.load();
     this.orderbtn();
@@ -89,15 +88,12 @@ class Cart {
       }
       total += rowSum;
     }
-
-
     return total
   }
 
   allMoms() {
     let total = this.allSum();
     let totalmoms = total * 0.25;
-
     return totalmoms
   }
 
@@ -108,16 +104,13 @@ class Cart {
       frakt += this.myCart[i].vikt * this.myCart[i].unit;
     }
     fraktTotal = frakt * 40;
-
     return fraktTotal
   }
 
   allTotal() {
     let allfrakt = this.allFrakt();
     let allsum = this.allSum();
-
     let alltotal = allfrakt + allsum;
-
     return alltotal
   }
 
@@ -137,8 +130,6 @@ class Cart {
 
   orderbtn() {
     $('body').on('click', `#orderBtn`, e => {
-
-
       let a = this.allFrakt();
       let b = this.allMoms();
       let c = this.allSum();
@@ -149,7 +140,6 @@ class Cart {
       cartinfo['summa'] = c;
       cartinfo['total'] = d;
       this.saveCart(cartinfo);
-
     });
   }
 

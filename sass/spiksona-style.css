@@ -244,13 +244,6 @@ ul li:nth-child(4).active ~ .slide {
     to {opacity:1 ;}
   }
 
-/* .hej{
-    border: 1px solid black;
-}
-
-.hej2{
-    border: 1px solid black;
-}  */
 .hej3{
     
     position: sticky;
@@ -281,8 +274,9 @@ ul li:nth-child(4).active ~ .slide {
     }
 }
 .orderDisplay{
-    border-bottom: 1px solid black;
+    background-color: rgb(201, 201, 201);
     margin-top: 15px;
+    border: 1px solid grey;
 }
 
 .tom{

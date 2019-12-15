@@ -9761,13 +9761,6 @@ h4 {
   }
 }
 
-/* .hej{
-    border: 1px solid black;
-}
-
-.hej2{
-    border: 1px solid black;
-}  */
 .hej3 {
   position: sticky;
   top: 100px;
@@ -9792,8 +9785,9 @@ h4 {
 }
 
 .orderDisplay {
-  border-bottom: 1px solid black;
+  background-color: #c9c9c9;
   margin-top: 15px;
+  border: 1px solid grey;
 }
 
 .tom {

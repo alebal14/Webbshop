@@ -14,8 +14,6 @@ class CartItem {
         
 }
     
-
-
     negCartCounter(){
       $('body').on('click', `#negCartCounter-${this.id}`, e => { 
           this.unit--;

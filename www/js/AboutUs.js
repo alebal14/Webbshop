@@ -1,10 +1,4 @@
 class AboutUs {
-
-  /*
-    I am an About Us page.
-    I display info about us.
-  */
-
   render() {
     $('#link2').addClass('active')
     $('main').removeClass('startsida');
@@ -44,7 +38,5 @@ class AboutUs {
     </section>
   </section>
     `);
-
   }
-
 }

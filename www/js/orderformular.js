@@ -1,7 +1,6 @@
 class OrderFormular {
 
   constructor() {
-    // OrderFormular.orderId = 0  
     this.submitButtonListener();
     this.sortBtn();
   }
@@ -54,16 +53,15 @@ class OrderFormular {
     $('.orderHistory').append(`<section class="sortOrder btn rounded-0 btn-warning my-2"><i class="fas fa-arrow-circle-down"></i> Sortera <i class="fas fa-arrow-circle-up"></i></section>`)
   
     for (let order of toList) {
-
-      // Find where you push an empty object into product
-      // AND product is a bad name for a list of products...
       if(order.product.constructor !== Array){order.product = []}
-
-      $('.orderHistory').append(`<section class="orderDisplay"><p><strong>Namn: </strong> ${order.name}
-       <strong> Email: </strong> ${order.email} 
-       <strong> Adress: </strong> ${order.adress} 
-       <strong> Meddelande: </strong>${order.message} 
-       <strong> Beställning: </strong> ${order.product.map(product => `
+      $('.orderHistory').append(`<section class="orderDisplay row">
+      <section class="displayBuyer col-4 text-right"><p><strong>Namn: </strong> ${order.name} <br>
+       <strong> Email: </strong> ${order.email} <br>
+       <strong> Adress: </strong> ${order.adress} <br> 
+       <strong> Meddelande: </strong>${order.message}
+       </section>
+       <section class="displayItems col-8 text-left">
+       <strong> Beställning: </strong><br> ${order.product.map(product => `
        <strong> Vara: </strong> ${product.name};
        <strong> Pris: </strong> ${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(product.price)};
        <strong> Antal: </strong>${product.unit}
@@ -75,7 +73,8 @@ class OrderFormular {
        <strong> Totalt: </strong>${new Intl.NumberFormat('sv-SV', { style: 'currency', currency: 'SEK' }).format(order.total)}  
        <br><strong> Datum: </strong> ${order.day}-${order.month}-${order.year} ,   
        
-       </p></section>`);          
+       </p></section>
+       </section>`);          
       } 
   }
 
